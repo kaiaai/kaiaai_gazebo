@@ -26,7 +26,7 @@
 #include "nav_msgs/msg/odometry.hpp"
 #include "sensor_msgs/msg/joint_state.hpp"
 #include "tf2_msgs/msg/tf_message.hpp"
-#include "kaia_msgs/msg/sensor_state.hpp"
+//#include "kaia_msgs/msg/sensor_state.hpp"
 
 #define LEFT 0
 #define RIGHT 1
