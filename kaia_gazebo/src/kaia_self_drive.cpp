@@ -58,7 +58,7 @@ KaiaSelfDrive::KaiaSelfDrive()
   robot_pose_ = 0.0;
   prev_robot_pose_ = 0.0;
 
-  robot_paused_ = FALSE;
+  robot_paused_ = false;
   cmd_vel_last_linear_ = 0.0;
   cmd_vel_last_angular_ = 0.0;
 
@@ -94,7 +94,7 @@ KaiaSelfDrive::~KaiaSelfDrive()
 /********************************************************************************
 ** Callback functions for ROS subscribers
 ********************************************************************************/
-void Kaia3Drive::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
+void KaiaSelfDrive::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
 {
   tf2::Quaternion q(
     msg->pose.pose.orientation.x,
@@ -166,9 +166,6 @@ void KaiaSelfDrive::update_callback()
     return;
 
   switch (kaia_state_num) {
-    case GET_KAIA_DIRECTION:
-      update_cmd_vel(0.0, 0.0);
-
     case GET_KAIA_DIRECTION:
       if (scan_data_[CENTER] > check_forward_dist) {
         if (scan_data_[LEFT] < check_side_dist) {

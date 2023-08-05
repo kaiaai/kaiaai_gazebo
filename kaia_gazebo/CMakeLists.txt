@@ -10,7 +10,7 @@ if(MSVC)
 endif()
 
 find_package(ament_cmake REQUIRED)
-find_package(gazebo REQUIRED)
+#find_package(gazebo REQUIRED)
 find_package(gazebo_ros_pkgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
@@ -39,15 +39,6 @@ set(EXEC_NAME "kaia_self_drive")
 
 add_executable(${EXEC_NAME} src/kaia_self_drive.cpp)
 ament_target_dependencies(${EXEC_NAME} ${dependencies})
-
-add_library(obstacle1 SHARED models/kaia_dqn_world/obstacle_plugin/obstacle1.cc)
-target_link_libraries(obstacle1 ${GAZEBO_LIBRARIES})
-
-add_library(obstacle2 SHARED models/kaia_dqn_world/obstacle_plugin/obstacle2.cc)
-target_link_libraries(obstacle2 ${GAZEBO_LIBRARIES})
-
-add_library(obstacles SHARED models/kaia_dqn_world/obstacle_plugin/obstacles.cc)
-target_link_libraries(obstacles ${GAZEBO_LIBRARIES})
 
 install(TARGETS ${EXEC_NAME}
   DESTINATION lib/${PROJECT_NAME}
