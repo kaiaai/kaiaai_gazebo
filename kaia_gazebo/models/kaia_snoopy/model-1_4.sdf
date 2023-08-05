@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
-<sdf version="1.5">
-  <model name="kaia_burger">
+<sdf version="1.4">
+  <model name="kaia_snoopy">
     <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
 
     <link name="base_footprint"/>
@@ -33,7 +33,7 @@
         <pose>-0.032 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://kaia_common/meshes/burger_base.dae</uri>
+            <uri>model://kaia_common/meshes/snoopy_base.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>

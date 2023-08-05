@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(kaia_fake_node)
+project(kaia_faux_node)
 
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 17)
@@ -31,12 +31,11 @@ set(dependencies
   "sensor_msgs"
   "tf2"
   "tf2_msgs"
-#  "kaia_msgs"
 )
 
-set(EXEC_NAME "kaia_fake_node")
+set(EXEC_NAME "kaia_faux_node")
 
-add_executable(${EXEC_NAME} src/kaia_fake_node.cpp)
+add_executable(${EXEC_NAME} src/kaia_faux_node.cpp)
 ament_target_dependencies(${EXEC_NAME} ${dependencies})
 
 

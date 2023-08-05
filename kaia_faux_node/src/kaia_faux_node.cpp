@@ -14,15 +14,15 @@
 //
 // ACKNOWLEDGEMENTS: This code is based on ROBOTIS Turtlebot3
 
-#include "kaia_fake_node/kaia_fake_node.hpp"
+#include "kaia_faux_node/kaia_faux_node.hpp"
 
 #include <memory>
 #include <string>
 
 using namespace std::chrono_literals;
 
-KaiaFake::KaiaFake()
-: Node("kaia_fake_node")
+KaiaFaux::KaiaFaux()
+: Node("kaia_faux_node")
 {
   /************************************************************
   ** Initialise ROS parameters
@@ -49,27 +49,27 @@ KaiaFake::KaiaFake()
     "cmd_vel", \
     qos, \
     std::bind(
-      &KaiaFake::command_velocity_callback, \
+      &KaiaFaux::command_velocity_callback, \
       this, \
       std::placeholders::_1));
 
   /************************************************************
   ** initialise ROS timers
   ************************************************************/
-  update_timer_ = this->create_wall_timer(10ms, std::bind(&KaiaFake::update_callback, this));
+  update_timer_ = this->create_wall_timer(10ms, std::bind(&KaiaFaux::update_callback, this));
 
-  RCLCPP_INFO(this->get_logger(), "Kaia fake node has been initialised");
+  RCLCPP_INFO(this->get_logger(), "Kaia faux node has been initialised");
 }
 
-KaiaFake::~KaiaFake()
+KaiaFaux::~KaiaFaux()
 {
-  RCLCPP_INFO(this->get_logger(), "Kaia fake node has been terminated");
+  RCLCPP_INFO(this->get_logger(), "Kaia faux node has been terminated");
 }
 
 /********************************************************************************
 ** Init functions
 ********************************************************************************/
-void KaiaFake::init_parameters()
+void KaiaFaux::init_parameters()
 {
   // Declare parameters that may be set on this node
   this->declare_parameter<std::string>("joint_states_frame");
@@ -89,7 +89,7 @@ void KaiaFake::init_parameters()
   this->get_parameter_or<double>("wheels.radius", wheel_radius_, 0.0);
 }
 
-void KaiaFake::init_variables()
+void KaiaFaux::init_variables()
 {
   // Initialise variables
   wheel_speed_cmd_[LEFT] = 0.0;
@@ -132,7 +132,7 @@ void KaiaFake::init_variables()
 /********************************************************************************
 ** Callback functions for ROS subscribers
 ********************************************************************************/
-void KaiaFake::command_velocity_callback(
+void KaiaFaux::command_velocity_callback(
   const geometry_msgs::msg::Twist::SharedPtr cmd_vel_msg)
 {
   last_cmd_vel_time_ = this->now();
@@ -148,7 +148,7 @@ void KaiaFake::command_velocity_callback(
 /********************************************************************************
 ** Update functions
 ********************************************************************************/
-void KaiaFake::update_callback()
+void KaiaFaux::update_callback()
 {
   rclcpp::Time time_now = this->now();
   rclcpp::Duration duration(time_now - prev_update_time_);
@@ -178,7 +178,7 @@ void KaiaFake::update_callback()
   tf_pub_->publish(odom_tf_msg);
 }
 
-bool KaiaFake::update_odometry(const rclcpp::Duration & duration)
+bool KaiaFaux::update_odometry(const rclcpp::Duration & duration)
 {
   double wheel_l, wheel_r;  // rotation value of wheel [rad]
   double delta_s, delta_theta;
@@ -244,7 +244,7 @@ bool KaiaFake::update_odometry(const rclcpp::Duration & duration)
   return true;
 }
 
-void KaiaFake::update_joint_state()
+void KaiaFaux::update_joint_state()
 {
   joint_states_.position[LEFT] = last_position_[LEFT];
   joint_states_.position[RIGHT] = last_position_[RIGHT];
@@ -252,7 +252,7 @@ void KaiaFake::update_joint_state()
   joint_states_.velocity[RIGHT] = last_velocity_[RIGHT];
 }
 
-void KaiaFake::update_tf(geometry_msgs::msg::TransformStamped & odom_tf)
+void KaiaFaux::update_tf(geometry_msgs::msg::TransformStamped & odom_tf)
 {
   odom_tf.header = odom_.header;
   odom_tf.child_frame_id = odom_.child_frame_id;
@@ -268,7 +268,7 @@ void KaiaFake::update_tf(geometry_msgs::msg::TransformStamped & odom_tf)
 int main(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<KaiaFake>());
+  rclcpp::spin(std::make_shared<KaiaFaux>());
   rclcpp::shutdown();
 
   return 0;

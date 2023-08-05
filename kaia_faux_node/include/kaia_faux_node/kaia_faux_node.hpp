@@ -14,8 +14,8 @@
 //
 // ACKNOWLEDGEMENT: This code is based on ROBOTIS Turtlebot3
 
-#ifndef KAIA_FAKE_NODE__KAIA_FAKE_NODE_HPP_
-#define KAIA_FAKE_NODE__KAIA_FAKE_NODE_HPP_
+#ifndef KAIA_FAUX_NODE__KAIA_FAUX_NODE_HPP_
+#define KAIA_FAUX_NODE__KAIA_FAUX_NODE_HPP_
 
 #include <tf2/LinearMath/Quaternion.h>
 #include <rclcpp/rclcpp.hpp>
@@ -31,11 +31,11 @@
 #define LEFT 0
 #define RIGHT 1
 
-class KaiaFake : public rclcpp::Node
+class KaiaFaux : public rclcpp::Node
 {
 public:
-  KaiaFake();
-  ~KaiaFake();
+  KaiaFaux();
+  ~KaiaFaux();
 
 private:
   // ROS time
@@ -78,4 +78,4 @@ private:
   void update_joint_state();
   void update_tf(geometry_msgs::msg::TransformStamped & odom_tf);
 };
-#endif  // KAIA_FAKE_NODE__KAIA_FAKE_NODE_HPP_
+#endif  // KAIA_FAUX_NODE__KAIA_FAUX_NODE_HPP_
