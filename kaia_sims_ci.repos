@@ -1,9 +1,17 @@
 repositories:
-  kaia/kaia:
+  kaiaai/kaia_bots:
     type: git
     url: https://github.com/kaiaai/kaia_bots.git
     version: humble
-  kaia/kaia_msgs:
+  kaiaai/kaia_msgs:
     type: git
     url: https://github.com/kaiaai/kaia_msgs.git
     version: humble
+  utils/DynamixelSDK:
+    type: git
+    url: https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+    version: ros2-devel
+  utils/hls_lfcd_lds_driver:
+    type: git
+    url: https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver.git
+    version: ros2-devel
