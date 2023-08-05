@@ -332,7 +332,7 @@
           <pose>3.5 0 -0.5 0 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://turtlebot3_world/meshes/hexagon.dae</uri>
+              <uri>model://kaia_world/meshes/hexagon.dae</uri>
               <scale>0.8 0.8 0.8</scale>
             </mesh>
           </geometry>
@@ -352,7 +352,7 @@
           <pose>3.5 0 -0.5 0 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://turtlebot3_world/meshes/hexagon.dae</uri>
+              <uri>model://kaia_world/meshes/hexagon.dae</uri>
               <scale>0.8 0.8 0.8</scale>
             </mesh>
           </geometry>
@@ -368,7 +368,7 @@
           <pose>1.8 2.7 0 0 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://turtlebot3_world/meshes/hexagon.dae</uri>
+              <uri>model://kaia_world/meshes/hexagon.dae</uri>
               <scale>0.55 0.55 0.55</scale>
             </mesh>
           </geometry>
@@ -388,7 +388,7 @@
           <pose>1.8 2.7 0 0 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://turtlebot3_world/meshes/hexagon.dae</uri>
+              <uri>model://kaia_world/meshes/hexagon.dae</uri>
               <scale>0.55 0.55 0.55</scale>
             </mesh>
           </geometry>
@@ -404,7 +404,7 @@
           <pose>1.8 -2.7 0 0 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://turtlebot3_world/meshes/hexagon.dae</uri>
+              <uri>model://kaia_world/meshes/hexagon.dae</uri>
               <scale>0.55 0.55 0.55</scale>
             </mesh>
           </geometry>
@@ -424,7 +424,7 @@
           <pose>1.8 -2.7 0 0 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://turtlebot3_world/meshes/hexagon.dae</uri>
+              <uri>model://kaia_world/meshes/hexagon.dae</uri>
               <scale>0.55 0.55 0.55</scale>
             </mesh>
           </geometry>
@@ -440,7 +440,7 @@
           <pose>-1.8 2.7 0 0 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://turtlebot3_world/meshes/hexagon.dae</uri>
+              <uri>model://kaia_world/meshes/hexagon.dae</uri>
               <scale>0.55 0.55 0.55</scale>
             </mesh>
           </geometry>
@@ -460,7 +460,7 @@
           <pose>-1.8 2.7 0 0 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://turtlebot3_world/meshes/hexagon.dae</uri>
+              <uri>model://kaia_world/meshes/hexagon.dae</uri>
               <scale>0.55 0.55 0.55</scale>
             </mesh>
           </geometry>
@@ -476,7 +476,7 @@
           <pose>-1.8 -2.7 0 0 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://turtlebot3_world/meshes/hexagon.dae</uri>
+              <uri>model://kaia_world/meshes/hexagon.dae</uri>
               <scale>0.55 0.55 0.55</scale>
             </mesh>
           </geometry>
@@ -496,7 +496,7 @@
           <pose>-1.8 -2.7 0 0 0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://turtlebot3_world/meshes/hexagon.dae</uri>
+              <uri>model://kaia_world/meshes/hexagon.dae</uri>
               <scale>0.55 0.55 0.55</scale>
             </mesh>
           </geometry>
@@ -513,7 +513,7 @@
         <pose>0 0 -0.3 0 0 -1.5708</pose>
         <geometry>
           <mesh>
-            <uri>model://turtlebot3_world/meshes/wall.dae</uri>
+            <uri>model://kaia_world/meshes/wall.dae</uri>
             <scale>0.25 0.25 0.25</scale>
           </mesh>
         </geometry>
@@ -533,7 +533,7 @@
         <pose>0 0 -0.3 0 0 -1.5708</pose>
         <geometry>
           <mesh>
-            <uri>model://turtlebot3_world/meshes/wall.dae</uri>
+            <uri>model://kaia_world/meshes/wall.dae</uri>
             <scale>0.25 0.25 0.25</scale>
           </mesh>
         </geometry>

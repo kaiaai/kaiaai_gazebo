@@ -149,17 +149,23 @@ void KaiaSelfDrive::update_callback()
   double check_side_dist = 0.6;
 
   char key = getch();
+  RCLCPP_INFO(this->get_logger(), "Key %02x", key);
 
-  if (key == ' ') {
-    robot_paused_ = not robot_paused_;
+  switch (key) {
+    case '\x03':
+      rclcpp::shutdown();
+      break;
 
-    if (robot_paused_) {
-      publish_cmd_vel(0.0, 0.0);
-      RCLCPP_INFO(this->get_logger(), "Robot paused");
-    } else {
-      publish_cmd_vel(cmd_vel_last_linear_, cmd_vel_last_angular_);
-      RCLCPP_INFO(this->get_logger(), "Robot un-paused");
-    }
+    case ' ':
+      robot_paused_ = not robot_paused_;
+
+      if (robot_paused_) {
+        publish_cmd_vel(0.0, 0.0);
+        RCLCPP_INFO(this->get_logger(), "Robot paused");
+      } else {
+        publish_cmd_vel(cmd_vel_last_linear_, cmd_vel_last_angular_);
+        RCLCPP_INFO(this->get_logger(), "Robot un-paused");
+      }
   }
 
   if (robot_paused_)
