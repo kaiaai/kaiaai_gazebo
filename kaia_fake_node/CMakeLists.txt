@@ -17,7 +17,7 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_msgs REQUIRED)
-find_package(kaia_msgs REQUIRED)
+# find_package(kaia_msgs REQUIRED)
 
 
 include_directories(
@@ -31,7 +31,7 @@ set(dependencies
   "sensor_msgs"
   "tf2"
   "tf2_msgs"
-  "kaia_msgs"
+#  "kaia_msgs"
 )
 
 set(EXEC_NAME "kaia_fake_node")
@@ -60,5 +60,5 @@ ament_export_dependencies(rclcpp)
 ament_export_dependencies(sensor_msgs)
 ament_export_dependencies(tf2)
 ament_export_dependencies(tf2_msgs)
-ament_export_dependencies(kaia_msgs)
+# ament_export_dependencies(kaia_msgs)
 ament_package()
