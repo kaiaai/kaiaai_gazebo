@@ -2,8 +2,8 @@ repositories:
   kaia/kaia:
     type: git
     url: https://github.com/kaiaai/kaia_bots.git
-    version: ros2-devel
+    version: humble
   kaia/kaia_msgs:
     type: git
     url: https://github.com/kaiaai/kaia_msgs.git
-    version: ros2-devel
+    version: humble
