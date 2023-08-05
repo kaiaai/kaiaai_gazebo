@@ -14,7 +14,7 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <exec_depend>kaia_fake_node</exec_depend>
+  <exec_depend>kaia_faux_node</exec_depend>
   <exec_depend>kaia_gazebo</exec_depend>
 
   <export>
