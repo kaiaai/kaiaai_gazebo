@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<robot name="kaia_burger"
+<robot name="kaia_snoopy"
   xmlns:xacro="http://ros.org/wiki/xacro">
   <!-- <xacro:include filename="$(find kaia_desc)/urdf/common_properties.urdf"/> -->
 
@@ -56,7 +56,7 @@
     <visual>
       <origin xyz="-0.032 0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://kaia_gazebo/models/kaia_common/meshes/burger_base.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://kaia_gazebo/models/kaia_common/meshes/snoopy_base.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="light_black"/>
     </visual>

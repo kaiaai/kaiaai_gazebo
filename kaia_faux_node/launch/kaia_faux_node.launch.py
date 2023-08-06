@@ -26,24 +26,24 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
-KAIA_MODEL = os.environ['KAIA_MODEL']
+KAIA_BOT_MODEL = os.environ['KAIA_BOT_MODEL']
 
 
 def generate_launch_description():
     param_dir = LaunchConfiguration(
         'param_dir',
         default=os.path.join(
-            get_package_share_directory('kaia_fake_node'),
+            get_package_share_directory('kaia_faux_node'),
             'param',
-            KAIA_MODEL + '.yaml'))
+            KAIA_BOT_MODEL + '.yaml'))
 
     rviz_dir = LaunchConfiguration(
         'rviz_dir',
         default=os.path.join(
-            get_package_share_directory('kaia_fake_node'), 'launch'))
+            get_package_share_directory('kaia_faux_node'), 'launch'))
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
-    urdf_file_name = 'kaia_' + KAIA_MODEL + '.urdf'
+    urdf_file_name = 'kaia_' + KAIA_BOT_MODEL + '.urdf'
 
     urdf = os.path.join(
         get_package_share_directory('kaia_gazebo'),
@@ -51,7 +51,7 @@ def generate_launch_description():
         urdf_file_name)
 
     return LaunchDescription([
-        LogInfo(msg=['Execute Kaia Fake Node!!']),
+        LogInfo(msg=['Execute Kaia faux node!!']),
 
         DeclareLaunchArgument(
             'param_dir',
@@ -62,8 +62,8 @@ def generate_launch_description():
             PythonLaunchDescriptionSource([rviz_dir, '/rviz2.launch.py'])),
 
         Node(
-            package='kaia_fake_node',
-            executable='kaia_fake_node',
+            package='kaia_faux_node',
+            executable='kaia_faux_node',
             parameters=[param_dir],
             output='screen'),
 

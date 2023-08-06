@@ -1,4 +1,4 @@
-turtlebot3_fake_node:
+kaia_faux_node:
   ros__parameters:
     wheels:
       separation: 0.160

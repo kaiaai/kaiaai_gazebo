@@ -27,8 +27,8 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     # Get the urdf file
-    KAIA_MODEL = os.environ['KAIA_MODEL']
-    model_folder = 'kaia_' + KAIA_MODEL
+    KAIA_BOT_MODEL = os.environ['KAIA_BOT_MODEL']
+    model_folder = 'kaia_' + KAIA_BOT_MODEL
     urdf_path = os.path.join(
         get_package_share_directory('kaia_gazebo'),
         'models',
@@ -53,7 +53,7 @@ def generate_launch_description():
         package='gazebo_ros',
         executable='spawn_entity.py',
         arguments=[
-            '-entity', KAIA_MODEL,
+            '-entity', KAIA_BOT_MODEL,
             '-file', urdf_path,
             '-timeout', '180',
             '-x', x_pose,
