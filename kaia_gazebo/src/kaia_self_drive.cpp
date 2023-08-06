@@ -18,32 +18,11 @@
 
 #include "kaia_gazebo/kaia_self_drive.hpp"
 #include <memory>
-#include <unistd.h>
-#include <termios.h>
+#include <signal.h>
 
 using namespace std::chrono_literals;
 
-int getch() {
-  int ch;
-  struct termios oldt;
-  struct termios newt;
-
-  tcgetattr(STDIN_FILENO, &oldt);
-  newt = oldt;
-
-  newt.c_lflag &= ~(ICANON | ECHO);
-  newt.c_iflag |= IGNBRK;
-  newt.c_iflag &= ~(INLCR | ICRNL | IXON | IXOFF);
-  newt.c_lflag &= ~(ICANON | ECHO | ECHOK | ECHOE | ECHONL | ISIG | IEXTEN);
-  newt.c_cc[VMIN] = 1;
-  newt.c_cc[VTIME] = 0;
-  tcsetattr(fileno(stdin), TCSANOW, &newt);
-
-  ch = getchar();
-  tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
-
-  return ch;
-}
+static volatile bool keepRunning = true;
 
 KaiaSelfDrive::KaiaSelfDrive()
 : Node("kaia_self_drive_node")
@@ -57,10 +36,6 @@ KaiaSelfDrive::KaiaSelfDrive()
 
   robot_pose_ = 0.0;
   prev_robot_pose_ = 0.0;
-
-  robot_paused_ = false;
-  cmd_vel_last_linear_ = 0.0;
-  cmd_vel_last_angular_ = 0.0;
 
   /************************************************************
   ** Initialise ROS publishers and subscribers
@@ -83,7 +58,6 @@ KaiaSelfDrive::KaiaSelfDrive()
   update_timer_ = this->create_wall_timer(10ms, std::bind(&KaiaSelfDrive::update_callback, this));
 
   RCLCPP_INFO(this->get_logger(), "Kaia bot simulation node has been initialized");
-  RCLCPP_INFO(this->get_logger(), "Press SPACE KEY to pause/unpause the bot, CTRL-C to exit");
 }
 
 KaiaSelfDrive::~KaiaSelfDrive()
@@ -123,15 +97,8 @@ void KaiaSelfDrive::scan_callback(const sensor_msgs::msg::LaserScan::SharedPtr m
 
 void KaiaSelfDrive::update_cmd_vel(double linear, double angular)
 {
-  cmd_vel_last_linear_ = linear;
-  cmd_vel_last_angular_ = angular;
-
-  publish_cmd_vel(linear, angular);
-}
-
-void KaiaSelfDrive::publish_cmd_vel(double linear, double angular)
-{
   geometry_msgs::msg::Twist cmd_vel;
+
   cmd_vel.linear.x = linear;
   cmd_vel.angular.z = angular;
 
@@ -148,28 +115,10 @@ void KaiaSelfDrive::update_callback()
   double check_forward_dist = 0.7;
   double check_side_dist = 0.6;
 
-  char key = getch();
-  RCLCPP_INFO(this->get_logger(), "Key %02x", key);
-
-  switch (key) {
-    case '\x03':
-      rclcpp::shutdown();
-      break;
-
-    case ' ':
-      robot_paused_ = not robot_paused_;
-
-      if (robot_paused_) {
-        publish_cmd_vel(0.0, 0.0);
-        RCLCPP_INFO(this->get_logger(), "Robot paused");
-      } else {
-        publish_cmd_vel(cmd_vel_last_linear_, cmd_vel_last_angular_);
-        RCLCPP_INFO(this->get_logger(), "Robot un-paused");
-      }
+  if (!keepRunning) {
+    update_cmd_vel(0.0, 0.0);
+    rclcpp::shutdown();
   }
-
-  if (robot_paused_)
-    return;
 
   switch (kaia_state_num) {
     case GET_KAIA_DIRECTION:
@@ -218,10 +167,14 @@ void KaiaSelfDrive::update_callback()
   }
 }
 
+void intHandler(int) {
+  keepRunning = false;
+}
 
 int main(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
+  signal(SIGINT, intHandler);
   rclcpp::spin(std::make_shared<KaiaSelfDrive>());
   rclcpp::shutdown();
 

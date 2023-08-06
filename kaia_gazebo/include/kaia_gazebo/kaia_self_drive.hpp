@@ -57,9 +57,6 @@ private:
   double robot_pose_;
   double prev_robot_pose_;
   double scan_data_[3];
-  double cmd_vel_last_linear_;
-  double cmd_vel_last_angular_;
-  bool robot_paused_;
 
   // ROS timer
   rclcpp::TimerBase::SharedPtr update_timer_;
@@ -67,7 +64,6 @@ private:
   // Function prototypes
   void update_callback();
   void update_cmd_vel(double linear, double angular);
-  void publish_cmd_vel(double linear, double angular);
   void scan_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg);
   void odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg);
 };
