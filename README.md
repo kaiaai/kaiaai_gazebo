@@ -11,7 +11,7 @@ This command launches the Kaia.ai developer Docker image and gives you bash prom
 ## Configuration
 Select the model you would like to simulate, e.g. `loki`. The default is `snoopy`:
 ```
-ros2 run kaia_sims select_model.sh loki
+ros2 run kaia_simulationss select_model.sh loki
 ```
 
 ## View your model in Gazebo, Rviz
@@ -25,7 +25,9 @@ ros2 launch kaia_bringup rviz2.launch.py
 - `kaia_world.launch.py` launches Gazebo simulator populated with a world an instance of your bot
 - `teleop_keyboard` lets you drive the bot manually
 - `kaia_self_drive` makes the bot self-drive around automatically.
-- `rviz2.launch.py` launches Rviz viewer. You will need Rviz viewer for navigation (see below) to manually set the bot's initial position estimate as well as specify navigation goals, i.e. where you want your bot to move
+- `rviz2.launch.py` launches Rviz viewer. You will need Rviz viewer for navigation (see below)
+to manually set the bot's initial position estimate as well as specify navigation goals,
+i.e. where you want your bot to move
 
 Press CTRL-C one or more times in each terminal window to stop the simulation.
 
@@ -42,7 +44,8 @@ ros2 launch kaia_cartographer cartographer.launch.py use_sim_time:=True
 ros2 run kaia_gazebo kaia_self_drive
 ros2 run nav2_map_server map_saver_cli -f $HOME/my_map
 ```
-- `cartographer.launch.py` launches the SLAM package and starts generating a map. You can see the map gradually appearing in Rviz viewer.
+- `cartographer.launch.py` launches the SLAM package and starts generating a map. You can see the map
+gradually appearing in Rviz viewer.
 - run `map_saver_cli` to save the map after the bot has driven around long enough to thoroughly map the world.
 
 Press CTRL-C one or more times in each terminal window to stop the simulation.
@@ -50,10 +53,11 @@ Press CTRL-C one or more times in each terminal window to stop the simulation.
 ## Navigate to a goal
 ```
 ros2 launch kaia_gazebo kaia_world.launch.py
-ros2 launch kaia_nav2 nav2.launch.py use_sim_time:=True map:=$HOME/my_map.yaml
+ros2 launch kaia_navigation nav2.launch.py use_sim_time:=True map:=$HOME/my_map.yaml
 ```
 - `nav2.launch.py` launches the navigation package and loads the map you created in the previous step
-- Before your bot can navigate, i.e. self-drive itself, to a destination of your choice, you must manually specify the approximate initial location of your bot.
+- Before your bot can navigate, i.e. self-drive itself, to a destination of your choice, you must
+manually specify the approximate initial location of your bot.
     - Click the `2D Pose Estimate` button on the upper toolbar in Rviz
     - Click on the map at the location where your bot currently is. Hold your mouse button down and drag your mouse in the direction your bot is facing. Now you can release your mouse button. Rviz should show your bot's location on the map.
 - Specify where you would like your bot to navigate, i.e. the goal location
