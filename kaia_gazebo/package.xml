@@ -3,14 +3,14 @@
 <package format="3">
   <name>kaia_gazebo</name>
   <version>0.0.0</version>
-  <description>Gazebo simulation package for the Kaia.ai bots</description>
+  <description>Gazebo simulation package for the Kaia.ai robots</description>
 
   <maintainer email="iliao@remake.ai">Ilia O.</maintainer>
   <author email="iliao@remake.ai">Ilia O.</author>
   <license>Apache-2.0</license>
   <url type="website">https://kaia.ai/</url>
-  <url type="repository">https://github.com/kaiaai/kaia_sims</url>
-  <url type="bugtracker">https://github.com/kaiaai/kaia_sims/issues</url>
+  <url type="repository">https://github.com/kaiaai/kaia_simulations</url>
+  <url type="bugtracker">https://github.com/kaiaai/kaia_simulations/issues</url>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
   <depend>gazebo_ros_pkgs</depend>

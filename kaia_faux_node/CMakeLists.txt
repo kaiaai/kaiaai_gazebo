@@ -17,7 +17,6 @@ find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_msgs REQUIRED)
-# find_package(kaia_msgs REQUIRED)
 
 
 include_directories(

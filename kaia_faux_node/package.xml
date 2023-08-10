@@ -3,12 +3,12 @@
 <package format="3">
   <name>kaia_faux_node</name>
   <version>0.0.0</version>
-  <description>Package for Kaia.ai faux node for use in simulations.</description>
+  <description>Kaia.ai faux node for simulations without the physical robot</description>
   <maintainer email="iliao@remake.ai">Ilia O.</maintainer>
   <license>Apache 2.0</license>
   <url type="website">https://kaia.ai</url>
-  <url type="repository">https://github.com/kaiaai/kaia_sims</url>
-  <url type="bugtracker">https://github.com/kaiaai/kaia_sims/issues</url>
+  <url type="repository">https://github.com/kaiaai/kaia_simulations</url>
+  <url type="bugtracker">https://github.com/kaiaai/kaia_simulations/issues</url>
   <author email="iliao@remake.ai">Ilia O.</author>
 
   <depend>ament_cmake</depend>
@@ -18,7 +18,6 @@
   <depend>sensor_msgs</depend>
   <depend>tf2</depend>
   <depend>tf2_msgs</depend>
-  <!-- depend>kaia_msgs</depend -->
 
   <exec_depend>robot_state_publisher</exec_depend>
 
