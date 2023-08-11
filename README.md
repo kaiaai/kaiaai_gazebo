@@ -1,7 +1,7 @@
 # Kaia.ai robot simulation
 Top-level ROS2 simulations package for Kaia.ai robots
 
-## Launch the development Docker image
+## Your PC setup
 - If you are using a Windows PC, install [Windows WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install)
 and [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
 - When running in Docker for Windows, also install [XLaunch](https://sourceforge.net/projects/xming/)
@@ -9,7 +9,9 @@ to display GUI from the container - Rviz2, Gazebo, rqt, etc. Launch XLaunch and 
 *display number to zero* when prompted.
 - When using a Linux PC, install [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) or
 [Docker Desktop](https://docs.docker.com/desktop/install/linux-install/) (with GUI)
-- Open a Linux or Windows shell and run:
+
+## Launch the development Docker image
+Open a Linux or Windows shell and run:
 ```
 docker run --name kaia-ros-dev-humble -it -p 8888:8888/udp -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 kaiaai/kaia-ros-dev:humble
 ```
