@@ -23,7 +23,7 @@ ros2 run kaia_simulationss select_model.sh loki
 ```
 
 ## View your model in Gazebo, Rviz
-Run each command below in a separate terminal window.
+Run each command below in a separate terminal window. Keep in mind that launching the Gazebo simulator for the very first time can take a minute or two - please be patient.
 ```
 ros2 launch kaia_gazebo kaia_world.launch.py
 ros2 run kaia_teleop teleop_keyboard
