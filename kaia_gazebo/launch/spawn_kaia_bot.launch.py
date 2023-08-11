@@ -27,12 +27,11 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     # Get the urdf file
-    KAIA_BOT_MODEL = os.environ['KAIA_BOT_MODEL']
-    model_folder = 'kaia_' + KAIA_BOT_MODEL
+    KAIA_BOT_MODEL = os.getenv('KAIA_BOT_MODEL', default='snoopy')
     urdf_path = os.path.join(
         get_package_share_directory('kaia_gazebo'),
         'models',
-        model_folder,
+        KAIA_BOT_MODEL,
         'model.sdf'
     )
 
