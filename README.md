@@ -13,7 +13,7 @@ to display GUI from the container - Rviz2, Gazebo, rqt, etc. Launch XLaunch and 
 ```
 docker run --name kaia-ros-dev-humble -it -p 8888:8888/udp -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 kaiaai/kaia-ros-dev:humble
 ```
-This command launches the Kaia.ai developer Docker image and gives you bash prompt.
+This command above launches the Kaia.ai developer Docker image and gives you bash prompt.
 
 ## Configuration
 Select the model you would like to simulate, e.g. `loki`. The default is `snoopy`:
