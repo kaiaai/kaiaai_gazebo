@@ -27,10 +27,10 @@ ros2 run kaia_simulationss select_model.sh loki
 ## View your model in Gazebo, Rviz
 Run each command below in a separate terminal window. Keep in mind that launching the Gazebo simulator for the very first time can take a minute or two - please be patient.
 ```
-ros2 launch kaia_gazebo kaia_world.launch.py
+ros2 launch kaia_gazebo kaia_world.launch.py description:=kaia_snoopy_description
 ros2 run kaia_teleop teleop_keyboard
 ros2 run kaia_gazebo kaia_self_drive
-ros2 launch kaia_bringup rviz2.launch.py
+ros2 launch kaia_bringup rviz2.launch.py description:=kaia_snoopy_description
 ```
 - `kaia_world.launch.py` launches Gazebo simulator populated with a world an instance of your bot
 - `teleop_keyboard` lets you drive the bot manually
@@ -38,6 +38,8 @@ ros2 launch kaia_bringup rviz2.launch.py
 - `rviz2.launch.py` launches Rviz viewer. You will need Rviz viewer for navigation (see below)
 to manually set the bot's initial position estimate as well as specify navigation goals,
 i.e. where you want your bot to move
+- if `description:=kaia_snoopy_description` is omitted, the value of `KAIA_ROBOT_DESCRIPTION`
+variable set in your `.bashrc` is used. If the variable is not set, `kaia_snoopy_description` is used by default.
 
 Press CTRL-C one or more times in each terminal window to stop the simulation.
 
