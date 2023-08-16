@@ -10,7 +10,7 @@ if(MSVC)
 endif()
 
 find_package(ament_cmake REQUIRED)
-find_package(gazebo REQUIRED)
+#find_package(gazebo REQUIRED)
 find_package(gazebo_ros_pkgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
