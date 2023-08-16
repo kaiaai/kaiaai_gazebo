@@ -33,12 +33,12 @@ to `kaia_snoopy_description`
 - Keep in mind that launching the Gazebo simulator for the very first time can take a minute
 or two - please be patient
 ```
-ros2 launch kaia_gazebo kaia_world.launch.py description:=kaia_snoopy_description
+ros2 launch kaia_gazebo world.launch.py description:=kaia_snoopy_description
 ros2 run kaia_teleop teleop_keyboard
 ros2 run kaia_gazebo kaia_self_drive
 ros2 launch kaia_bringup rviz2.launch.py description:=kaia_snoopy_description
 ```
-- `kaia_world.launch.py` launches Gazebo simulator populated with a world an instance of your bot
+- `world.launch.py` launches Gazebo simulator populated with a world an instance of your bot
 - `teleop_keyboard` lets you drive the bot manually
 - `kaia_self_drive` makes the bot self-drive around automatically.
 - `rviz2.launch.py` launches Rviz viewer. You will need Rviz viewer for navigation (see below)
