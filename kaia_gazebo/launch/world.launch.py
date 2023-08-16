@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import os
+import os, re
 from ament_index_python.packages import get_package_share_path
 from launch import LaunchDescription, LaunchContext
 from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, OpaqueFunction
@@ -30,11 +30,11 @@ def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose
     y_pose_str = context.perform_substitution(y_pose)
     world_str = context.perform_substitution(world)
 
+    model_name = re.sub(r'_description$', '', description_str)
     urdf_path_name = os.path.join(
       get_package_share_path(description_str),
-      'gazebo',
       'urdf',
-      'robot.urdf')
+      model_name + '.gazebo.urdf')
     print('URDF file name : {}'.format(urdf_path_name))
 
     # with open(urdf_path, 'r') as infp:
@@ -43,10 +43,11 @@ def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose
 
     sdf_path_name = os.path.join(
         get_package_share_path(description_str),
-        'gazebo',
-        'sdf',
+        'models',
+        model_name,
         'model.sdf'
     )
+    print('Model file name : {}'.format(sdf_path_name))
 
     pkg_gazebo_ros = get_package_share_path('gazebo_ros')
     world_path_name = os.path.join(get_package_share_path('kaia_gazebo'), 'worlds', world_str)
@@ -73,7 +74,7 @@ def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose
             package='gazebo_ros',
             executable='spawn_entity.py',
             arguments=[
-                '-entity', description_str,
+                '-entity', model_name,
                 '-file', sdf_path_name,
                 '-timeout', '180',
                 '-x', x_pose_str,
