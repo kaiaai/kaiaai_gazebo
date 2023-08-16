@@ -65,7 +65,7 @@ def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose
             name='robot_state_publisher',
             output='screen',
             parameters=[{
-                'use_sim_time': use_sim_time_str == 'true',
+                'use_sim_time': use_sim_time_str.lower() == 'true',
                 'robot_description': robot_description
             }]
         ),
