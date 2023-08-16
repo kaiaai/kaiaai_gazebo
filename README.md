@@ -17,12 +17,6 @@ docker run --name kaia-ros-dev-humble -it -p 8888:8888/udp -e DISPLAY=host.docke
 ```
 This command above launches the Kaia.ai developer Docker image and gives you bash prompt.
 
-## Configuration
-Select the model you would like to simulate , e.g. `loki`. The default is `snoopy`:
-```
-ros2 run kaia_simulationss select_model.sh loki
-```
-
 ## View your model in Gazebo, Rviz
 - Run each command below in a separate terminal window
 - Select the model you would like to simulate by setting `description` to the robot description
@@ -30,6 +24,8 @@ package name, e.g. `description:=kaia_loki_description`
 If the `description` argument is omitted, the value of `KAIA_ROBOT_DESCRIPTION` environment
 variable will be used. If that environment variable is not set, `description` will default
 to `kaia_snoopy_description`
+- Optionaly, set the world to be launched using the `world` argument,
+e.g. `world:=empty_world.world`. `kaia_world.world` launches by default
 - Keep in mind that launching the Gazebo simulator for the very first time can take a minute
 or two - please be patient
 ```
@@ -57,7 +53,7 @@ docker exec -it kaia-ros-dev-humble bash
 ## Run SLAM, generate a map
 Run each command below in a separate terminal window.
 ```
-ros2 launch kaia_gazebo kaia_world.launch.py
+ros2 launch kaia_gazebo world.launch.py
 ros2 launch kaia_cartographer cartographer.launch.py use_sim_time:=True
 ros2 run kaia_gazebo kaia_self_drive
 ros2 run nav2_map_server map_saver_cli -f $HOME/my_map
@@ -70,7 +66,7 @@ Press CTRL-C one or more times in each terminal window to stop the simulation.
 
 ## Navigate to a goal
 ```
-ros2 launch kaia_gazebo kaia_world.launch.py
+ros2 launch kaia_gazebo world.launch.py
 ros2 launch kaia_navigation nav2.launch.py use_sim_time:=True map:=$HOME/my_map.yaml
 ```
 - `nav2.launch.py` launches the navigation package and loads the map you created in the previous step
