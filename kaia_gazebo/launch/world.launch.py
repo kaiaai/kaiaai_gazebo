@@ -17,17 +17,18 @@
 import os
 from ament_index_python.packages import get_package_share_path
 from launch import LaunchDescription, LaunchContext
-from launch.actions import IncludeLaunchDescription
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, OpaqueFunction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.parameter_descriptions import ParameterValue
+from launch_ros.actions import Node
 
-
-def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose):
+def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose, world):
     description_str = context.perform_substitution(description)
     use_sim_time_str = context.perform_substitution(use_sim_time)
     x_pose_str = context.perform_substitution(x_pose)
     y_pose_str = context.perform_substitution(y_pose)
+    world_str = context.perform_substitution(world)
 
     urdf_path_name = os.path.join(
       get_package_share_path(description_str),
@@ -43,18 +44,28 @@ def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose
     sdf_path_name = os.path.join(
         get_package_share_path(description_str),
         'gazebo',
-        'robot',
+        'sdf',
         'model.sdf'
     )
 
+    pkg_gazebo_ros = get_package_share_path('gazebo_ros')
+    world_path_name = os.path.join(get_package_share_path('kaia_gazebo'), 'worlds', world_str)
+    print('World file name : {}'.format(world_path_name))
+
     return [
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(
+                os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
+            ),
+            launch_arguments={'world': world_path_name}.items()
+        ),
         Node(
             package='robot_state_publisher',
             executable='robot_state_publisher',
             name='robot_state_publisher',
             output='screen',
             parameters=[{
-                'use_sim_time': use_sim_time_str,
+                'use_sim_time': use_sim_time_str == 'true',
                 'robot_description': robot_description
             }]
         ),
@@ -76,9 +87,6 @@ def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose
 def generate_launch_description():
     default_description = os.getenv('KAIA_ROBOT_DESCRIPTION', default='kaia_snoopy_description')
     pkg_gazebo_ros = get_package_share_path('gazebo_ros')
-
-    world_name = LaunchConfiguration('world')
-    world = os.path.join( get_package_share_path('kaia_gazebo'), 'worlds', world_name)
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -104,25 +112,19 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument(
             name='world',
-            default_value='kaia_world',
-            description='World name'
-        ),
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
-            ),
-            launch_arguments={'world': world}.items()
+            default_value='kaia_world.world',
+            description='World file name'
         ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
                 os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
             )
         ),
-        spawn_kaia_bot_cmd,
         OpaqueFunction(function=make_nodes, args=[
             LaunchConfiguration('description'),
             LaunchConfiguration('use_sim_time'),
             LaunchConfiguration('x_pose'),
-            LaunchConfiguration('y_pose')
+            LaunchConfiguration('y_pose'),
+            LaunchConfiguration('world')
         ])
     ])
