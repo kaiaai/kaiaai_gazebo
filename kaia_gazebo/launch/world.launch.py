@@ -13,16 +13,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-# ACKNOWLEDGEMENT: This code is based on ROBOTIS Turtlebot3
 
 import os
-
 from ament_index_python.packages import get_package_share_path
-from launch import LaunchDescription
+from launch import LaunchDescription, LaunchContext
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.parameter_descriptions import ParameterValue
 
 
@@ -75,7 +72,6 @@ def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose
             output='screen'
         )
     ]
-
 
 def generate_launch_description():
     default_description = os.getenv('KAIA_ROBOT_DESCRIPTION', default='kaia_snoopy_description')
