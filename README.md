@@ -1,5 +1,8 @@
 # Kaia.ai robot simulation
-Top-level ROS2 simulations package for Kaia.ai robots
+Top-level ROS2 simulations package for [Kaia.ai](https://kaia.ai) robots
+
+We are currently prepping the platform and 3D-printable pet robots - this is work-in-progress.
+Please sign up for an early launch invite [here](https://remake.ai).
 
 ## Your PC setup
 - If you are using a Windows PC, install [Windows WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install)
