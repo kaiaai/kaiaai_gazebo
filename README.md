@@ -1,7 +1,7 @@
 # Kaia.ai robot simulation
 Top-level ROS2 simulations package for [Kaia.ai](https://kaia.ai) robots
 
-We are currently prepping the platform and 3D-printable pet robots - this is work-in-progress.
+We are prepping the platform and 3D-printable pet robots - this is work-in-progress.
 Please sign up for an early launch invite [here](https://remake.ai).
 
 ## Your PC setup
