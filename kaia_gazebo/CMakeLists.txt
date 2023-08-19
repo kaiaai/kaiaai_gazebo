@@ -36,9 +36,9 @@ set(dependencies
   "tf2"
 )
 
-set(EXEC_NAME "kaia_self_drive")
+set(EXEC_NAME "self_drive_gazebo")
 
-add_executable(${EXEC_NAME} src/kaia_self_drive.cpp)
+add_executable(${EXEC_NAME} src/self_drive_gazebo.cpp)
 ament_target_dependencies(${EXEC_NAME} ${dependencies})
 
 install(TARGETS ${EXEC_NAME}

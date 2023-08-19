@@ -31,9 +31,6 @@
 #define LEFT   1
 #define RIGHT  2
 
-#define LINEAR_VELOCITY  0.3
-#define ANGULAR_VELOCITY 1.5
-
 #define GET_KAIA_DIRECTION 0
 #define KAIA_DRIVE_FORWARD 1
 #define KAIA_RIGHT_TURN    2
