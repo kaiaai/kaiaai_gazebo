@@ -50,16 +50,16 @@ docker exec -it kaia-ros-dev-humble bash
 
 ## Simulate a different robot model
 - Select the robot model you would like to simulate by setting `description` to the robot description
-package name, e.g. `description:=kaia_loki_description`. This is useful if you are modding an
+package name, e.g. `description:=r2d2_description`. This is useful if you are modding an
 existing robot model
 - If the `description` argument is omitted, the value of `KAIA_ROBOT_DESCRIPTION` environment
 variable will be used. If that environment variable is not set, `description` will default
 to `kaia_snoopy_description`
 ```
-ros2 launch kaia_gazebo world.launch.py description:=kaia_loki_description
+ros2 launch kaia_gazebo world.launch.py description:=r2d2_description
 ros2 run kaia_teleop teleop_keyboard
-ros2 launch kaia_gazebo self_drive_gazebo.launch.py description:=kaia_loki_description
-ros2 launch kaia_bringup rviz2.launch.py description:=kaia_loki_description
+ros2 launch kaia_gazebo self_drive_gazebo.launch.py description:=r2d2_description
+ros2 launch kaia_bringup rviz2.launch.py description:=r2d2_description
 ```
 
 ## Run SLAM, generate a map
