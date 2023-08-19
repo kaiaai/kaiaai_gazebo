@@ -20,13 +20,8 @@ docker run --name kaia-ros-dev-humble -it -p 8888:8888/udp -e DISPLAY=host.docke
 ```
 This command above launches the Kaia.ai developer Docker image and gives you bash prompt.
 
-## View your model in Gazebo, Rviz
+## Simulate the default robot model
 - Run each command below in a separate terminal window
-- Select the model you would like to simulate by setting `description` to the robot description
-package name, e.g. `description:=kaia_loki_description`  
-If the `description` argument is omitted, the value of `KAIA_ROBOT_DESCRIPTION` environment
-variable will be used. If that environment variable is not set, `description` will default
-to `kaia_snoopy_description`
 - Optionaly, set the world to be launched using the `world` argument,
 e.g. `world:=empty_world.world`. `kaia_world.world` launches by default
 - Keep in mind that launching the Gazebo simulator for the very first time can take a minute
@@ -34,12 +29,12 @@ or two - please be patient
 ```
 ros2 launch kaia_gazebo world.launch.py description:=kaia_snoopy_description
 ros2 run kaia_teleop teleop_keyboard
-ros2 run kaia_gazebo kaia_self_drive
+ros2 launch kaia_gazebo self_drive_gazebo.launch.py description:=kaia_snoopy_description
 ros2 launch kaia_bringup rviz2.launch.py description:=kaia_snoopy_description
 ```
 - `world.launch.py` launches Gazebo simulator populated with a world an instance of your bot
 - `teleop_keyboard` lets you drive the bot manually
-- `kaia_self_drive` makes the bot self-drive around automatically.
+- `self_drive_gazebo` makes the bot self-drive around in Gazebo simulations
 - `rviz2.launch.py` launches Rviz viewer. You will need Rviz viewer for navigation (see below)
 to manually set the bot's initial position estimate as well as specify navigation goals,
 i.e. where you want your bot to move
@@ -53,12 +48,26 @@ To open a new terminal window, launch a new a Linux or Windows shell (outside Do
 docker exec -it kaia-ros-dev-humble bash
 ```
 
+## Simulate a different robot model
+- Select the robot model you would like to simulate by setting `description` to the robot description
+package name, e.g. `description:=kaia_loki_description`. This is useful if you are modding an
+existing robot model
+- If the `description` argument is omitted, the value of `KAIA_ROBOT_DESCRIPTION` environment
+variable will be used. If that environment variable is not set, `description` will default
+to `kaia_snoopy_description`
+```
+ros2 launch kaia_gazebo world.launch.py description:=kaia_loki_description
+ros2 run kaia_teleop teleop_keyboard
+ros2 launch kaia_gazebo self_drive_gazebo.launch.py description:=kaia_loki_description
+ros2 launch kaia_bringup rviz2.launch.py description:=kaia_loki_description
+```
+
 ## Run SLAM, generate a map
 Run each command below in a separate terminal window.
 ```
 ros2 launch kaia_gazebo world.launch.py
 ros2 launch kaia_cartographer cartographer.launch.py use_sim_time:=True
-ros2 run kaia_gazebo kaia_self_drive
+ros2 launch kaia_gazebo self_drive_gazebo.launch.py
 ros2 run nav2_map_server map_saver_cli -f $HOME/my_map
 ```
 - `cartographer.launch.py` launches the SLAM package and starts generating a map. You can see the map
