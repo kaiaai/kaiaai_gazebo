@@ -77,9 +77,9 @@ Press CTRL-C one or more times in each terminal window to stop the simulation.
 ## Navigate to a goal
 ```
 ros2 launch kaia_gazebo world.launch.py
-ros2 launch kaia_navigation nav2.launch.py use_sim_time:=true map:=$HOME/my_map.yaml
+ros2 launch kaia_navigation navigation.launch.py use_sim_time:=true map:=$HOME/my_map.yaml
 ```
-- `nav2.launch.py` launches the navigation package and loads the map you created in the previous step
+- `navigation.launch.py` launches the navigation package and loads the map you created in the previous step
 - Before your bot can navigate, i.e. self-drive itself, to a destination of your choice, you must
 manually specify the approximate initial location of your bot.
     - Click the `2D Pose Estimate` button on the upper toolbar in Rviz
