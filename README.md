@@ -27,10 +27,10 @@ e.g. `world:=empty_world.world`. `kaia_world.world` launches by default
 - Keep in mind that launching the Gazebo simulator for the very first time can take a minute
 or two - please be patient
 ```
-ros2 launch kaia_gazebo world.launch.py description:=kaia_snoopy_description
+ros2 launch kaia_gazebo world.launch.py
 ros2 run kaia_teleop teleop_keyboard
-ros2 launch kaia_gazebo self_drive_gazebo.launch.py description:=kaia_snoopy_description
-ros2 launch kaia_bringup rviz2.launch.py description:=kaia_snoopy_description
+ros2 launch kaia_gazebo self_drive_gazebo.launch.py
+ros2 launch kaia_bringup rviz2.launch.py
 ```
 - `world.launch.py` launches Gazebo simulator populated with a world an instance of your bot
 - `teleop_keyboard` lets you drive the bot manually
@@ -38,8 +38,6 @@ ros2 launch kaia_bringup rviz2.launch.py description:=kaia_snoopy_description
 - `rviz2.launch.py` launches Rviz viewer. You will need Rviz viewer for navigation (see below)
 to manually set the bot's initial position estimate as well as specify navigation goals,
 i.e. where you want your bot to move
-- if `description:=kaia_snoopy_description` is omitted, the value of `KAIA_ROBOT_DESCRIPTION`
-variable set in your `.bashrc` is used. If the variable is not set, `kaia_snoopy_description` is used by default.
 
 Press CTRL-C one or more times in each terminal window to stop the simulation.
 
@@ -66,7 +64,7 @@ ros2 launch kaia_bringup rviz2.launch.py description:=r2d2_description
 Run each command below in a separate terminal window.
 ```
 ros2 launch kaia_gazebo world.launch.py
-ros2 launch kaia_cartographer cartographer.launch.py use_sim_time:=True
+ros2 launch kaia_cartographer cartographer.launch.py use_sim_time:=true
 ros2 launch kaia_gazebo self_drive_gazebo.launch.py
 ros2 run nav2_map_server map_saver_cli -f $HOME/my_map
 ```
@@ -79,7 +77,7 @@ Press CTRL-C one or more times in each terminal window to stop the simulation.
 ## Navigate to a goal
 ```
 ros2 launch kaia_gazebo world.launch.py
-ros2 launch kaia_navigation nav2.launch.py use_sim_time:=True map:=$HOME/my_map.yaml
+ros2 launch kaia_navigation nav2.launch.py use_sim_time:=true map:=$HOME/my_map.yaml
 ```
 - `nav2.launch.py` launches the navigation package and loads the map you created in the previous step
 - Before your bot can navigate, i.e. self-drive itself, to a destination of your choice, you must
