@@ -34,7 +34,7 @@ def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose
     urdf_path_name = os.path.join(
       get_package_share_path(description_str),
       'urdf',
-      model_name + '.gazebo.urdf')
+      model_name + '.urdf.xacro')
 
     # with open(urdf_path, 'r') as infp:
     #     robot_desc = infp.read()
@@ -42,16 +42,15 @@ def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose
 
     sdf_path_name = os.path.join(
         get_package_share_path(description_str),
-        'gazebo',
-        model_name,
-        'model.sdf'
+        'sdf',
+        model_name + '.sdf'
     )
 
     pkg_gazebo_ros = get_package_share_path('gazebo_ros')
     world_path_name = os.path.join(get_package_share_path('kaia_gazebo'), 'worlds', world_str)
 
-    print('URDF file name  : {}'.format(urdf_path_name))
-    print('Model file name : {}'.format(sdf_path_name))
+    print('URDF  file name : {}'.format(urdf_path_name))
+    print('SDF   file name : {}'.format(sdf_path_name))
     print('World file name : {}'.format(world_path_name))
 
     return [
