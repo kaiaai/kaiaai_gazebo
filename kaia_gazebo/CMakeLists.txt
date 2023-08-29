@@ -49,6 +49,10 @@ install(DIRECTORY launch models worlds
   DESTINATION share/${PROJECT_NAME}/
 )
 
+install(
+  PROGRAMS script/urdf2sdf.sh
+  DESTINATION lib/${PROJECT_NAME})
+
 install(DIRECTORY include/
   DESTINATION include/
 )
