@@ -36,8 +36,6 @@ def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose
       'urdf',
       model_name + '.urdf.xacro')
 
-    # with open(urdf_path, 'r') as infp:
-    #     robot_desc = infp.read()
     robot_description = ParameterValue(Command(['xacro ', urdf_path_name]), value_type=str)
 
     sdf_path_name = os.path.join(
