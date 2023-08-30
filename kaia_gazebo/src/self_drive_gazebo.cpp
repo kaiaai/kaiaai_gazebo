@@ -55,13 +55,13 @@ KaiaSelfDrive::KaiaSelfDrive()
 
   update_timer_ = this->create_wall_timer(10ms, std::bind(&KaiaSelfDrive::update_callback, this));
 
-  RCLCPP_INFO(this->get_logger(), "Self-drive Gazebo simulation node has been initialized");
+  RCLCPP_INFO(this->get_logger(), "Robot is now moving");
 }
 
 KaiaSelfDrive::~KaiaSelfDrive()
 {
   RCLCPP_INFO(this->get_logger(),
-    "Self-drive Gazebo simulation node has been terminated. Robot has been stopped.");
+    "Robot has been stopped");
 }
 
 void KaiaSelfDrive::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
