@@ -53,6 +53,10 @@ install(DIRECTORY include/
   DESTINATION include/
 )
 
+install(
+  PROGRAMS script/urdf2sdf.sh
+  DESTINATION lib/${PROJECT_NAME})
+
 ################################################################################
 # Macro for ament package
 ################################################################################
