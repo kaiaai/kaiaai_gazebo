@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO syntax urdf2sdf.sh /full/path/robot.urdf.xacro
+# TODO syntax urdf2sdf.sh /full/path/robot.urdf  # Don't run xacro
 [[ -z "$1" ]] && { echo "$1 does not exist" ; exit 1; }
 cd $1
 
