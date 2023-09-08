@@ -85,7 +85,7 @@ def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose
     ]
 
 def generate_launch_description():
-    default_description = os.getenv('KAIA_ROBOT_DESCRIPTION', default='kaia_snoopy_description')
+    default_description = os.getenv('KAIAAI_ROBOT', default='kaiaai_snoopy')
     pkg_gazebo_ros = get_package_share_path('gazebo_ros')
 
     return LaunchDescription([
@@ -98,7 +98,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             name='description',
             default_value=default_description,
-            description='Robot description package name, overrides KAIA_ROBOT_DESCRIPTION'
+            description='Robot description package name, overrides KAIAAI_ROBOT'
         ),
         DeclareLaunchArgument(
             name='x_pose',

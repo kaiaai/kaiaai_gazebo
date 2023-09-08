@@ -44,13 +44,13 @@ def make_nodes(context: LaunchContext, description):
 
 
 def generate_launch_description():
-    default_description_name = os.getenv('KAIA_ROBOT_DESCRIPTION', default='kaia_snoopy_description')
+    default_description_name = os.getenv('KAIAAI_ROBOT', default='kaiaai_snoopy')
 
     return LaunchDescription([
         DeclareLaunchArgument(
             name='description',
             default_value=default_description_name,
-            description='Robot description package name, overrides KAIA_ROBOT_DESCRIPTION'
+            description='Robot description package name, overrides KAIAAI_ROBOT'
         ),
         OpaqueFunction(function=make_nodes, args=[
             LaunchConfiguration('description'),
