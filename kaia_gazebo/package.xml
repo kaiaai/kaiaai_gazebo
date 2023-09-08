@@ -3,7 +3,7 @@
 <package format="3">
   <name>kaia_gazebo</name>
   <version>0.0.0</version>
-  <description>Gazebo simulation package for the Kaia.ai robots</description>
+  <description>Gazebo simulation package for Kaia.ai-compatible robots</description>
 
   <maintainer email="iliao@remake.ai">Ilia O.</maintainer>
   <author email="iliao@remake.ai">Ilia O.</author>
@@ -20,7 +20,8 @@
   <depend>sensor_msgs</depend>
   <depend>tf2</depend>
 
-  <exec_depend>kaia_snoopy_description</exec_depend>
+  <exec_depend>kaiaai_snoopy</exec_depend>
+  <exec_depend>kaiaai_loki</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>

@@ -17,7 +17,8 @@ find_package(nav_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
-find_package(kaia_snoopy_description REQUIRED)
+find_package(kaiaai_loki_description REQUIRED)
+find_package(kaiaai_snoopy REQUIRED)
 
 link_directories(
   ${GAZEBO_LIBRARY_DIRS}
