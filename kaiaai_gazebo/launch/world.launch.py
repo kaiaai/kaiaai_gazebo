@@ -46,7 +46,7 @@ def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose
     )
 
     pkg_gazebo_ros = get_package_share_path('gazebo_ros')
-    world_path_name = os.path.join(get_package_share_path('kaia_gazebo'), 'worlds', world_str)
+    world_path_name = os.path.join(get_package_share_path('kaiaai_gazebo'), 'worlds', world_str)
 
     print('URDF  file name : {}'.format(urdf_path_name))
     print('SDF   file name : {}'.format(sdf_path_name))

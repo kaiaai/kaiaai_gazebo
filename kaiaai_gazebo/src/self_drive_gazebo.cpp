@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "kaia_gazebo/self_drive_gazebo.hpp"
+#include "kaiaai_gazebo/self_drive_gazebo.hpp"
 #include <memory>
 #include <signal.h>
 
@@ -104,59 +104,59 @@ void KaiaSelfDrive::update_cmd_vel(double linear, double angular)
 
 void KaiaSelfDrive::update_callback()
 {
-  static uint8_t kaia_state_num = GET_KAIA_DIRECTION;
+  static uint8_t kaiaai_state_num = KAIAAI_GET_DIRECTION;
 
   if (!keepRunning) {
     update_cmd_vel(0.0, 0.0);
     rclcpp::shutdown();
   }
 
-  switch (kaia_state_num) {
-    case GET_KAIA_DIRECTION:
+  switch (kaiaai_state_num) {
+    case KAIAAI_GET_DIRECTION:
 
       if (scan_data_[CENTER] > this->get_parameter("check.forward_distance").as_double()) {
         double check_side_dist = this->get_parameter("check.side_distance").as_double();
 
         if (scan_data_[LEFT] < check_side_dist) {
           prev_robot_pose_ = robot_pose_;
-          kaia_state_num = KAIA_RIGHT_TURN;
+          kaiaai_state_num = KAIAAI_RIGHT_TURN;
         } else if (scan_data_[RIGHT] < check_side_dist) {
           prev_robot_pose_ = robot_pose_;
-          kaia_state_num = KAIA_LEFT_TURN;
+          kaiaai_state_num = KAIAAI_LEFT_TURN;
         } else {
-          kaia_state_num = KAIA_DRIVE_FORWARD;
+          kaiaai_state_num = KAIAAI_DRIVE_FORWARD;
         }
       } else {
         prev_robot_pose_ = robot_pose_;
-        kaia_state_num = KAIA_RIGHT_TURN;
+        kaiaai_state_num = KAIAAI_RIGHT_TURN;
       }
       break;
 
-    case KAIA_DRIVE_FORWARD:
+    case KAIAAI_DRIVE_FORWARD:
       update_cmd_vel(this->get_parameter("velocity.linear").as_double(), 0.0);
-      kaia_state_num = GET_KAIA_DIRECTION;
+      kaiaai_state_num = KAIAAI_GET_DIRECTION;
       break;
 
-    case KAIA_RIGHT_TURN:
+    case KAIAAI_RIGHT_TURN:
       if (fabs(prev_robot_pose_ - robot_pose_) >=
         this->get_parameter("check.turn_away_angle").as_int() * DEG2RAD) {
-        kaia_state_num = GET_KAIA_DIRECTION;
+        kaiaai_state_num = KAIAAI_GET_DIRECTION;
       } else {
         update_cmd_vel(0.0, -1 * this->get_parameter("velocity.angular").as_double());
       }
       break;
 
-    case KAIA_LEFT_TURN:
+    case KAIAAI_LEFT_TURN:
       if (fabs(prev_robot_pose_ - robot_pose_) >=
         this->get_parameter("check.turn_away_angle").as_int() * DEG2RAD) {
-        kaia_state_num = GET_KAIA_DIRECTION;
+        kaiaai_state_num = KAIAAI_GET_DIRECTION;
       } else {
         update_cmd_vel(0.0, this->get_parameter("velocity.angular").as_double());
       }
       break;
 
     default:
-      kaia_state_num = GET_KAIA_DIRECTION;
+      kaiaai_state_num = KAIAAI_GET_DIRECTION;
       break;
   }
 }

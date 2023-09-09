@@ -35,7 +35,7 @@ def make_nodes(context: LaunchContext, description):
 
     return [
         Node(
-            package="kaia_gazebo",
+            package="kaiaai_gazebo",
             executable="self_drive_gazebo",
             output="screen",
             parameters = [param_path_name]

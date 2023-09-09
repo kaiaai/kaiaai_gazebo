@@ -14,8 +14,8 @@
 
 // ACKNOWLEDGEMENT: This code is based on ROBOTIS Turtlebot3 project
 
-#ifndef KAIA_GAZEBO__KAIA_SELF_DRIVE_HPP_
-#define KAIA_GAZEBO__KAIA_SELF_DRIVE_HPP_
+#ifndef KAIAAI_GAZEBO__KAIAAI_SELF_DRIVE_HPP_
+#define KAIAAI_GAZEBO__KAIAAI_SELF_DRIVE_HPP_
 
 #include <geometry_msgs/msg/twist.hpp>
 #include <nav_msgs/msg/odometry.hpp>
@@ -31,10 +31,10 @@
 #define LEFT   1
 #define RIGHT  2
 
-#define GET_KAIA_DIRECTION 0
-#define KAIA_DRIVE_FORWARD 1
-#define KAIA_RIGHT_TURN    2
-#define KAIA_LEFT_TURN     3
+#define KAIAAI_GET_DIRECTION 0
+#define KAIAAI_DRIVE_FORWARD 1
+#define KAIAAI_RIGHT_TURN    2
+#define KAIAAI_LEFT_TURN     3
 
 class KaiaSelfDrive : public rclcpp::Node
 {
@@ -64,4 +64,4 @@ private:
   void scan_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg);
   void odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg);
 };
-#endif  // KAIA_GAZEBO__KAIA_SELF_DRIVE_HPP_
+#endif  // KAIAAI_GAZEBO__KAIAAI_SELF_DRIVE_HPP_
