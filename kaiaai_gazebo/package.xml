@@ -20,8 +20,8 @@
   <depend>sensor_msgs</depend>
   <depend>tf2</depend>
 
-  <exec_depend>kaiaai_snoopy</exec_depend>
-  <exec_depend>kaiaai_loki</exec_depend>
+  <exec_depend>makerspet_snoopy</exec_depend>
+  <exec_depend>makerspet_loki</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>

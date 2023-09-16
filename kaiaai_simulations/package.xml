@@ -3,7 +3,7 @@
 <package format="3">
   <name>kaiaai_simulations</name>
   <version>0.0.0</version>
-  <description>ROS2 packages for Kaia.ai-compatible robots simulations</description>
+  <description>ROS2 packages for Kaia.ai software platform compatible robots simulations</description>
 
   <maintainer email="iliao@remake.ai">Ilia O.</maintainer>
   <author email="iliao@remake.ai">Ilia O.</author>
