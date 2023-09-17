@@ -24,13 +24,13 @@ from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.actions import Node
 
 def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose, world):
-    description_str = context.perform_substitution(description)
+    model_name = context.perform_substitution(description)
     use_sim_time_str = context.perform_substitution(use_sim_time)
     x_pose_str = context.perform_substitution(x_pose)
     y_pose_str = context.perform_substitution(y_pose)
     world_str = context.perform_substitution(world)
 
-    model_name = re.sub(r'_description$', '', description_str)
+    # model_name = re.sub(r'_description$', '', model_name)
     urdf_path_name = os.path.join(
       get_package_share_path(description_str),
       'urdf',
