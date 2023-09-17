@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<sdf version='1.4'>
+  <model name='makerspet_poster'>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.03 0.696 1</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://ada_lovelace_poster/material/script</uri>
+            <uri>model://ada_lovelace_poster/material/textures</uri>
+            <name>Custom/ada_lovelace</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <static>1</static>
+    <allow_auto_disable>1</allow_auto_disable>
+  </model>
+</sdf>

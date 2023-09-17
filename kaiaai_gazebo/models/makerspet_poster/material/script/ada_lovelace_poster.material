@@ -1,0 +1,13 @@
+material Custom/ada_lovelace
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture makerspet_logo_530x700.png
+			}
+		}
+	}
+}
