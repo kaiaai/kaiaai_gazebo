@@ -12,11 +12,12 @@ to display GUI from the container - Rviz2, Gazebo, rqt, etc. Launch XLaunch and 
 *display number to zero* when prompted.
 - When using a Linux PC, install [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) or
 [Docker Desktop](https://docs.docker.com/desktop/install/linux-install/) (with GUI)
+- Download the Kaia.ai developer's Docker image `docker pull kaiaai/kaiaai-ros-dev:humble`
 
 ## Launch the development Docker image
 Open a Linux or Windows shell and run:
 ```
-docker run --name kaia-ros-dev-humble -it -p 8888:8888/udp -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 kaiaai/kaia-ros-dev:humble
+docker run --name kaiaai-ros-dev-humble -it -p 8888:8888/udp -e DISPLAY=host.docker.internal:0.0 -e LIBGL_ALWAYS_INDIRECT=0 kaiaai/kaiaai-ros-dev:humble
 ```
 This command above launches the Kaia.ai developer Docker image and gives you bash prompt.
 
@@ -43,7 +44,7 @@ Press CTRL-C one or more times in each terminal window to stop the simulation.
 
 To open a new terminal window, launch a new a Linux or Windows shell (outside Docker) and run:
 ```
-docker exec -it kaia-ros-dev-humble bash
+docker exec -it kaiaai-ros-dev-humble bash
 ```
 
 ## Simulate a different robot model
