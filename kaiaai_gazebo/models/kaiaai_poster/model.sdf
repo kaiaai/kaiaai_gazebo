@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <sdf version='1.4'>
-  <model name='makerspet_poster'>
+  <model name='kaiaai_poster'>
     <link name="link">
       <visual name="visual">
         <geometry>
@@ -10,9 +10,9 @@
         </geometry>
         <material>
           <script>
-            <uri>model://makerspet_poster/material/script</uri>
-            <uri>model://makerspet_poster/material/textures</uri>
-            <name>Custom/makerspet</name>
+            <uri>model://kaiaai_poster/material/script</uri>
+            <uri>model://kaiaai_poster/material/textures</uri>
+            <name>Custom/kaiaai</name>
           </script>
         </material>
       </visual>
