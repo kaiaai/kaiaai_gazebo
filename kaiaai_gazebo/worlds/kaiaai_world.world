@@ -43,10 +43,10 @@
       </ode>
     </physics>
 
-    <model name="kaia_world">
+    <model name="kaiaai_world">
       <static>1</static>
       <include>
-        <uri>model://kaia_world</uri>
+        <uri>model://kaiaai_world</uri>
       </include>
     </model>
 
