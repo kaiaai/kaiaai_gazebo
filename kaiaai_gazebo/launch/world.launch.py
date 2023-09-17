@@ -32,14 +32,14 @@ def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose
 
     # model_name = re.sub(r'_description$', '', model_name)
     urdf_path_name = os.path.join(
-      get_package_share_path(description_str),
+      get_package_share_path(model_name),
       'urdf',
       model_name + '.urdf.xacro')
 
     robot_description = ParameterValue(Command(['xacro ', urdf_path_name]), value_type=str)
 
     sdf_path_name = os.path.join(
-        get_package_share_path(description_str),
+        get_package_share_path(model_name),
         'sdf',
         model_name,
         'model.sdf'
