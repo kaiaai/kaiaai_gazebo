@@ -6,7 +6,7 @@ material Custom/makerspet
 		{
 			texture_unit
 			{
-				texture makerspet_logo_600x700.png
+				texture kaiaai_logo_450x460.png
 			}
 		}
 	}
