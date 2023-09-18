@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <sdf version='1.4'>
-  <model name='kaiaai_room_wall'>
+  <model name='room_wall_2x5'>
     <link name="link">
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.1 5.0 2.5</size>
+            <size>0.1 5.0 2.0</size>
           </box>
         </geometry>
         <material>
