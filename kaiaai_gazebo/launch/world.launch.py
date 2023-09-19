@@ -112,7 +112,7 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument(
             name='world',
-            default_value='kaiaai_world.world',
+            default_value='living_room.world',
             description='World file name'
         ),
         IncludeLaunchDescription(
