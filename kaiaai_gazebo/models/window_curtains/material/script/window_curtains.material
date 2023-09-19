@@ -1,0 +1,13 @@
+material Custom/window_curtains
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture window_curtains.png
+			}
+		}
+	}
+}
