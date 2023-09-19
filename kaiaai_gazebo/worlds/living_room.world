@@ -183,10 +183,10 @@
       <pose>-0.175994 3.34263 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>9081 682000000</sim_time>
-      <real_time>210 716506559</real_time>
-      <wall_time>1695110818 50434333</wall_time>
-      <iterations>210468</iterations>
+      <sim_time>9572 814000000</sim_time>
+      <real_time>60 525156251</real_time>
+      <wall_time>1695113245 888618189</wall_time>
+      <iterations>60451</iterations>
       <model name='Bookshelf'>
         <pose>-2 2.38 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -396,6 +396,26 @@
         <scale>1 1 1</scale>
         <link name='link'>
           <pose>0 2.4 0.9 0 -0 1.5707</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='window_curtains'>
+        <pose>2.45 1 1 0 -0 3.1415</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.45 1 1 0 -0 3.1415</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='window_curtains_clone'>
+        <pose>2.45 -1 1 0 -0 3.1415</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.45 -1 1 0 -0 3.1415</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -1250,7 +1270,7 @@
     </model>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>0.741079 -0.561704 9.64233 0 1.4578 1.66423</pose>
+        <pose>-3.69771 -2.63552 8.31296 -0 0.997797 0.476256</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -1469,6 +1489,54 @@
       <static>0</static>
       <allow_auto_disable>1</allow_auto_disable>
       <pose>-1.83596 1.40391 0 0 -0 0</pose>
+    </model>
+    <model name='window_curtains'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.02 1.5676 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://window_curtains/material/script</uri>
+              <uri>model://window_curtains/material/textures</uri>
+              <name>Custom/window_curtains</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>-1.99246 -0.311449 0 0 -0 0</pose>
+    </model>
+    <model name='window_curtains_clone'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.02 1.5676 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://window_curtains/material/script</uri>
+              <uri>model://window_curtains/material/textures</uri>
+              <name>Custom/window_curtains</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>2.10559 -1.25107 1 0 -0 3.1415</pose>
     </model>
   </world>
 </sdf>

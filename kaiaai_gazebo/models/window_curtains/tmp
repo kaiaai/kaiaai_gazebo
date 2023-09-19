@@ -9,11 +9,15 @@
           </box>
         </geometry>
         <material>
-          <script>
+          <!-- script>
             <uri>model://window_curtains/material/script</uri>
             <uri>model://window_curtains/material/textures</uri>
             <name>Custom/window_curtains</name>
-          </script>
+          </script -->
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 1 0 1</emissive>
         </material>
       </visual>
     </link>
