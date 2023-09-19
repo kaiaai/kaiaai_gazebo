@@ -9,7 +9,7 @@ This repo is a ROS2 simulations meta-package for [Kaia.ai](https://kaia.ai) pet 
 and [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
 - When running in Docker for Windows, also install [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
 to display GUI from the container - Rviz2, Gazebo, rqt, etc.
-  Launch `c:\Program Files\VcXsrv\xlaunch.exe` and set its
+  - Launch `c:\Program Files\VcXsrv\xlaunch.exe` and set its
 *display number* to *zero* when prompted.
 - When using a Linux PC, install [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) or
 [Docker Desktop](https://docs.docker.com/desktop/install/linux-install/) (with GUI)
