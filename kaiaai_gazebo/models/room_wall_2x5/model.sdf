@@ -10,8 +10,11 @@
         </geometry>
         <material>
           <script>
-            <name>Gazebo/White</name>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <!-- name>Gazebo/White</name -->
+            <!-- uri>file://media/materials/scripts/gazebo.material</uri -->
+            <uri>model://room_wall_2x5/material/script</uri>
+            <uri>model://room_wall_2x5/material/textures</uri>
+            <name>Custom/room_wall_2x5</name>
           </script>
         </material>
       </visual>
