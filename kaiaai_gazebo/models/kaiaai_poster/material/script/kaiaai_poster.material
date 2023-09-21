@@ -1,0 +1,13 @@
+material Custom/kaiaai
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture kaiaai_logo_450x460.png
+			}
+		}
+	}
+}
