@@ -91,10 +91,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>13192 218000000</sim_time>
-      <real_time>480 209291832</real_time>
-      <wall_time>1695257208 814844271</wall_time>
-      <iterations>476528</iterations>
+      <sim_time>14955 16000000</sim_time>
+      <real_time>1109 343679395</real_time>
+      <wall_time>1695292348 101781966</wall_time>
+      <iterations>1105289</iterations>
       <model name='Bookshelf'>
         <pose>-2 2.4 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -106,20 +106,20 @@
         </link>
       </model>
       <model name='Chair'>
-        <pose>1 0.1 0 -4e-06 2e-06 3.1415</pose>
+        <pose>0.9 0.1 0 0 -0 3.1415</pose>
         <scale>1 1 1</scale>
         <link name='body'>
-          <pose>1 0.1 0 2e-06 4e-06 -1.57088</pose>
+          <pose>0.9 0.1 0 0 -0 -1.57089</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='CoffeeTable'>
-        <pose>0 0.1 -0.000129 2e-06 -2e-06 -0</pose>
+        <pose>0 0.1 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='body'>
-          <pose>0 0.1 -0.000129 2e-06 -2e-06 -0</pose>
+          <pose>0 0.1 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -156,20 +156,20 @@
         </link>
       </model>
       <model name='MiniSofa'>
-        <pose>-1 0.1 -0.000897 -4e-06 -1.2e-05 -3.1415</pose>
+        <pose>-1 0.1 0 0 -0 3.1415</pose>
         <scale>1 1 1</scale>
         <link name='body'>
-          <pose>-1 0.1 -0.000897 1.2e-05 -4e-06 1.57088</pose>
+          <pose>-1 0.1 0 0 -0 1.5707</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='Sofa'>
-        <pose>0.394007 -1.2 0.024684 -7e-06 0.056173 1.5707</pose>
+        <pose>0.394 -1.2 0 0 -0 1.5707</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0.394007 -1.2 0.024684 0.056173 7e-06 3.1415</pose>
+          <pose>0.394 -1.2 0 0 -0 3.1415</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -195,7 +195,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='door_08x2m_0'>
+      <model name='door_08x2m'>
         <pose>-2.495 -1.2 1 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
@@ -289,7 +289,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='rug_ivory_2m_0'>
+      <model name='rug_ivory_2m'>
         <pose>0 0.15 0 0 -0 1.5707</pose>
         <scale>1 1 1</scale>
         <link name='link'>
@@ -333,193 +333,17 @@
         <pose>0 0 10 0 -0 0</pose>
       </light>
     </state>
-    <model name='Sofa'>
-      <static>1</static>
-      <link name='link'>
-        <pose>0 0 0 0 -0 1.5708</pose>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/sofa/2/files/meshes/Sofa.obj</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/sofa/2/files/meshes/Sofa.obj</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <inertial>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-1.28433 1.20433 0 0 -0 0</pose>
-    </model>
-    <model name='CoffeeTable'>
-      <static>1</static>
-      <link name='body'>
-        <pose>0 0 0 0 -0 0</pose>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/coffeetable/1/files/meshes/CoffeeTable.obj</uri>
-              <scale>0.00817 0.00817 0.00817</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/coffeetable/1/files/meshes/CoffeeTable.obj</uri>
-              <scale>0.00817 0.00817 0.00817</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <inertial>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-0.123778 1.87707 0 0 -0 0</pose>
-    </model>
-    <model name='MiniSofa'>
-      <static>1</static>
-      <link name='body'>
-        <pose>0 0 0 0 0 -1.5708</pose>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/minisofa/2/files/meshes/minisofa.obj</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/minisofa/2/files/meshes/minisofa.obj</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <inertial>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>1.18077 2.08594 0 0 -0 0</pose>
-    </model>
-    <model name='MaleVisitorSit'>
-      <static>1</static>
-      <link name='body'>
-        <pose>0 0 0 0 -0 0</pose>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/malevisitorsit/1/files/meshes/MaleVisitorSit.obj</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/malevisitorsit/1/files/meshes/MaleVisitorSit_Col.obj</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-0.856978 0.978143 0 0 -0 0</pose>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-4.01473 -1.89344 8.65189 0 0.969795 0.364238</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='living_room'>
+      <static>0</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>-1.83596 1.40391 0 0 -0 0</pose>
     </model>
     <model name='FemaleVisitorSit'>
       <static>1</static>
@@ -528,14 +352,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/femalevisitorsit/1/files/meshes/FemaleVisitorSit.obj</uri>
+              <uri>model://FemaleVisitorSit/meshes/FemaleVisitorSit.obj</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/femalevisitorsit/1/files/meshes/FemaleVisitorSit_Col.obj</uri>
+              <uri>model://FemaleVisitorSit/meshes/FemaleVisitorSit_Col.obj</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -556,25 +380,23 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>-1.28442 1.76166 0 0 -0 0</pose>
+      <pose>-0.480053 0.919142 0 0 -0 0</pose>
     </model>
-    <model name='Chair'>
+    <model name='MaleVisitorSit'>
       <static>1</static>
       <link name='body'>
-        <pose>0 0 0 0 -0 1.5708</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/chair/2/files/meshes/Chair.obj</uri>
-              <scale>0.00817 0.00817 0.00817</scale>
+              <uri>model://MaleVisitorSit/meshes/MaleVisitorSit.obj</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/chair/2/files/meshes/Chair.obj</uri>
-              <scale>0.00817 0.00817 0.00817</scale>
+              <uri>model://MaleVisitorSit/meshes/MaleVisitorSit_Col.obj</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -592,22 +414,71 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <inertial>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>-1.32182 -0.32378 0 0 -0 0</pose>
+      <pose>0.452539 1.26704 0 0 -0 0</pose>
+    </model>
+    <model name='tv_65in_emissive'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.05 1.45 0.83</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://tv_65in_emissive/material/script</uri>
+              <uri>model://tv_65in_emissive/material/textures</uri>
+              <name>Custom/tv_emissive</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>-0.258565 1.72398 0 0 -0 0</pose>
+    </model>
+    <model name='TVStand'>
+      <static>1</static>
+      <link name='body'>
+        <pose>0 0 0 0 -0 0</pose>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://TVStand/meshes/TVStand.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://TVStand/meshes/TVStand_Col.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.476824 1.57753 0 0 -0 0</pose>
     </model>
     <model name='Bookshelf'>
       <static>1</static>
@@ -651,7 +522,7 @@
             </script>
             <pbr>
               <metal>
-                <albedo_map>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/bookshelf/3/files/bookshelf_diffuse.jpg</albedo_map>
+                <albedo_map>model://Bookshelf/bookshelf_diffuse.jpg</albedo_map>
               </metal>
             </pbr>
           </material>
@@ -692,7 +563,7 @@
             </script>
             <pbr>
               <metal>
-                <albedo_map>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/bookshelf/3/files/bookshelf_diffuse.jpg</albedo_map>
+                <albedo_map>model://Bookshelf/bookshelf_diffuse.jpg</albedo_map>
               </metal>
             </pbr>
           </material>
@@ -733,7 +604,7 @@
             </script>
             <pbr>
               <metal>
-                <albedo_map>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/bookshelf/3/files/bookshelf_diffuse.jpg</albedo_map>
+                <albedo_map>model://Bookshelf/bookshelf_diffuse.jpg</albedo_map>
               </metal>
             </pbr>
           </material>
@@ -774,7 +645,7 @@
             </script>
             <pbr>
               <metal>
-                <albedo_map>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/bookshelf/3/files/bookshelf_diffuse.jpg</albedo_map>
+                <albedo_map>model://Bookshelf/bookshelf_diffuse.jpg</albedo_map>
               </metal>
             </pbr>
           </material>
@@ -815,7 +686,7 @@
             </script>
             <pbr>
               <metal>
-                <albedo_map>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/bookshelf/3/files/bookshelf_diffuse.jpg</albedo_map>
+                <albedo_map>model://Bookshelf/bookshelf_diffuse.jpg</albedo_map>
               </metal>
             </pbr>
           </material>
@@ -856,7 +727,7 @@
             </script>
             <pbr>
               <metal>
-                <albedo_map>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/bookshelf/3/files/bookshelf_diffuse.jpg</albedo_map>
+                <albedo_map>model://Bookshelf/bookshelf_diffuse.jpg</albedo_map>
               </metal>
             </pbr>
           </material>
@@ -897,7 +768,7 @@
             </script>
             <pbr>
               <metal>
-                <albedo_map>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/bookshelf/3/files/bookshelf_diffuse.jpg</albedo_map>
+                <albedo_map>model://Bookshelf/bookshelf_diffuse.jpg</albedo_map>
               </metal>
             </pbr>
           </material>
@@ -906,7 +777,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>0.038494 -1.41548 0 0 -0 0</pose>
+      <pose>-1.68529 1.91085 0 0 -0 0</pose>
     </model>
     <model name='cabinet'>
       <static>1</static>
@@ -1137,23 +1008,24 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>0.402214 -0.12139 0 0 -0 0</pose>
+      <pose>1.79402 1.75201 0 0 -0 0</pose>
     </model>
-    <model name='TVStand'>
-      <static>1</static>
+    <model name='MiniSofa'>
       <link name='body'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 0 0 0 0 -1.5708</pose>
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/tvstand/1/files/meshes/TVStand.obj</uri>
+              <uri>model://MiniSofa/meshes/minisofa.obj</uri>
+              <scale>1 1 1</scale>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/tvstand/1/files/meshes/TVStand_Col.obj</uri>
+              <uri>model://MiniSofa/meshes/minisofa.obj</uri>
+              <scale>1 1 1</scale>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -1174,28 +1046,135 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>0.631456 -0.880502 0 0 -0 0</pose>
+      <static>1</static>
+      <pose>-1.47062 0.999637 0 0 -0 0</pose>
     </model>
-    <gui fullscreen='0'>
-      <camera name='user_camera'>
-        <pose>-1.58866 -7.38184 7.19695 -0 0.6618 1.06426</pose>
-        <view_controller>orbit</view_controller>
-        <projection_type>perspective</projection_type>
-      </camera>
-    </gui>
-    <model name='makerspet_poster'>
+    <model name='Sofa'>
+      <link name='link'>
+        <pose>0 0 0 0 -0 1.5708</pose>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://Sofa/meshes/Sofa.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://Sofa/meshes/Sofa.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <pose>-1.25354 -0.278988 0 0 -0 0</pose>
+    </model>
+    <model name='Chair'>
+      <link name='body'>
+        <pose>0 0 0 0 -0 1.5708</pose>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://Chair/meshes/Chair.obj</uri>
+              <scale>0.00817 0.00817 0.00817</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://Chair/meshes/Chair.obj</uri>
+              <scale>0.00817 0.00817 0.00817</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <pose>-1.87882 1.33974 0 0 -0 0</pose>
+    </model>
+    <model name='LampAndStand'>
+      <static>1</static>
+      <link name='body'>
+        <pose>0 0 0 0 -0 0</pose>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://LampAndStand/meshes/LampAndStand.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://LampAndStand/meshes/LampAndStand_Col.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-1.53105 -1.08954 0 0 -0 0</pose>
+    </model>
+    <model name='door_08x2m'>
       <link name='link'>
         <visual name='visual'>
           <geometry>
             <box>
-              <size>0.03 0.85714 1</size>
+              <size>0.1 0.8 2</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/makerspet_poster/1/files/material/script</uri>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/makerspet_poster/1/files/material/textures</uri>
-              <name>Custom/makerspet</name>
+              <uri>model://door_08x2m/material/script</uri>
+              <uri>model://door_08x2m/material/textures</uri>
+              <name>Custom/door_08x2m</name>
             </script>
           </material>
         </visual>
@@ -1205,7 +1184,31 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-1.79858 1.04969 0 0 -0 0</pose>
+      <pose>-2.36263 -1.20408 0 0 -0 0</pose>
+    </model>
+    <model name='rug_ivory_2m'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>1.6 2 0.005</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://rug_ivory_2m/material/script</uri>
+              <uri>model://rug_ivory_2m/material/textures</uri>
+              <name>Custom/rug_ivory_2m</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>-1.59221 -1.15308 0 0 -0 0</pose>
     </model>
     <model name='kaiaai_poster'>
       <link name='link'>
@@ -1217,8 +1220,8 @@
           </geometry>
           <material>
             <script>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/kaiaai_poster/1/files/material/script</uri>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/kaiaai_poster/1/files/material/textures</uri>
+              <uri>model://kaiaai_poster/material/script</uri>
+              <uri>model://kaiaai_poster/material/textures</uri>
               <name>Custom/kaiaai</name>
             </script>
           </material>
@@ -1229,58 +1232,21 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-2.09205 -0.074601 0 0 -0 0</pose>
+      <pose>-2.35136 -0.170394 0 0 -0 0</pose>
     </model>
-    <model name='LampAndStand'>
-      <static>1</static>
-      <link name='body'>
-        <pose>0 0 0 0 -0 0</pose>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/lampandstand/2/files/meshes/LampAndStand.obj</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/lampandstand/2/files/meshes/LampAndStand_Col.obj</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-2.02594 -1.9925 0 0 -0 0</pose>
-    </model>
-    <model name='door_08x2m_0'>
+    <model name='makerspet_poster'>
       <link name='link'>
         <visual name='visual'>
           <geometry>
             <box>
-              <size>0.1 0.8 2</size>
+              <size>0.03 0.85714 1</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/door_08x2m/1/files/material/script</uri>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/door_08x2m/1/files/material/textures</uri>
-              <name>Custom/door_08x2m</name>
+              <uri>model://makerspet_poster/material/script</uri>
+              <uri>model://makerspet_poster/material/textures</uri>
+              <name>Custom/makerspet</name>
             </script>
           </material>
         </visual>
@@ -1290,212 +1256,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-2.1175 -0.31181 0 0 -0 0</pose>
-    </model>
-    <model name='living_room'>
-      <static>0</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>-1.83596 1.40391 0 0 -0 0</pose>
-    </model>
-    <model name='room_wall_2x5'>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.1 5 2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/script</uri>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/textures</uri>
-              <name>Custom/room_wall_2x5</name>
-            </script>
-          </material>
-        </visual>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.1 5 2</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>-3.31522 0.586996 0 0 -0 0</pose>
-    </model>
-    <model name='room_wall_2x5_0'>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.1 5 2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/script</uri>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/textures</uri>
-              <name>Custom/room_wall_2x5</name>
-            </script>
-          </material>
-        </visual>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.1 5 2</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>2.24326 -0.257306 0 0 -0 0</pose>
-    </model>
-    <model name='room_wall_2x5_1'>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.1 5 2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/script</uri>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/textures</uri>
-              <name>Custom/room_wall_2x5</name>
-            </script>
-          </material>
-        </visual>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.1 5 2</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>0.299614 -2.6978 0 0 -0 0</pose>
-    </model>
-    <model name='room_wall_2x5_2'>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.1 5 2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/script</uri>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/textures</uri>
-              <name>Custom/room_wall_2x5</name>
-            </script>
-          </material>
-        </visual>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.1 5 2</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>2.8172 0.540927 0 0 -0 0</pose>
-    </model>
-    <model name='rug_ivory_2m_0'>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>1.6 2 0.005</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/rug_ivory_2m/1/files/material/script</uri>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/rug_ivory_2m/1/files/material/textures</uri>
-              <name>Custom/rug_ivory_2m</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>-1.68463 0.969564 0 0 -0 0</pose>
+      <pose>-1.79747 0.401658 0 0 -0 0</pose>
     </model>
     <model name='window_curtains'>
       <link name='link'>
@@ -1507,8 +1268,8 @@
           </geometry>
           <material>
             <script>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/window_curtains/1/files/material/script</uri>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/window_curtains/1/files/material/textures</uri>
+              <uri>model://window_curtains/material/script</uri>
+              <uri>model://window_curtains/material/textures</uri>
               <name>Custom/window_curtains</name>
             </script>
             <emissive>0 1 0 1</emissive>
@@ -1520,7 +1281,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>2.35925 1.12227 0 0 -0 0</pose>
+      <pose>2.28465 0.91976 0 0 -0 0</pose>
     </model>
     <model name='window_curtains_0'>
       <link name='link'>
@@ -1532,8 +1293,8 @@
           </geometry>
           <material>
             <script>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/window_curtains/1/files/material/script</uri>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/window_curtains/1/files/material/textures</uri>
+              <uri>model://window_curtains/material/script</uri>
+              <uri>model://window_curtains/material/textures</uri>
               <name>Custom/window_curtains</name>
             </script>
             <emissive>0 1 0 1</emissive>
@@ -1545,10 +1306,10 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>2.38084 0.258658 0 0 -0 0</pose>
+      <pose>1.88703 0.410884 0 0 -0 0</pose>
     </model>
     <model name='red_ball_10in'>
-      <pose>0.83729 1.5589 0.127 0 -0 0</pose>
+      <pose>0.916472 1.4173 0.127 0 -0 0</pose>
       <link name='link'>
         <inertial>
           <mass>0.213</mass>
@@ -1606,29 +1367,220 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='tv_65in_emissive'>
+    <model name='CoffeeTable'>
+      <link name='body'>
+        <pose>0 0 0 0 -0 0</pose>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://CoffeeTable/meshes/CoffeeTable.obj</uri>
+              <scale>0.00817 0.00817 0.00817</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://CoffeeTable/meshes/CoffeeTable.obj</uri>
+              <scale>0.00817 0.00817 0.00817</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <pose>-1.51717 0.939748 0 0 -0 0</pose>
+    </model>
+    <model name='room_wall_2x5'>
       <link name='link'>
         <visual name='visual'>
           <geometry>
             <box>
-              <size>0.05 1.45 0.83</size>
+              <size>0.1 5 2</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/tv_65in_emissive/4/files/material/script</uri>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/tv_65in_emissive/4/files/material/textures</uri>
-              <name>Custom/tv_emissive</name>
+              <uri>model://room_wall_2x5/material/script</uri>
+              <uri>model://room_wall_2x5/material/textures</uri>
+              <name>Custom/room_wall_2x5</name>
             </script>
           </material>
         </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>1.96281 1.09749 0 0 -0 0</pose>
+      <pose>-1.6883 0.622037 0 0 -0 0</pose>
+    </model>
+    <model name='room_wall_2x5_0'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.1 5 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://room_wall_2x5/material/script</uri>
+              <uri>model://room_wall_2x5/material/textures</uri>
+              <name>Custom/room_wall_2x5</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>-2.78604 0.374135 0 0 -0 0</pose>
+    </model>
+    <model name='room_wall_2x5_2'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.1 5 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://room_wall_2x5/material/script</uri>
+              <uri>model://room_wall_2x5/material/textures</uri>
+              <name>Custom/room_wall_2x5</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>-0.637773 3.6908 0 0 -0 0</pose>
+    </model>
+    <model name='room_wall_2x5_1'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.1 5 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://room_wall_2x5/material/script</uri>
+              <uri>model://room_wall_2x5/material/textures</uri>
+              <name>Custom/room_wall_2x5</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>0.757172 -3.3208 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>
