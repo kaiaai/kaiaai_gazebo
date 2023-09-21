@@ -1,4 +1,4 @@
-material Custom/room_wall_2x5
+material Custom/room_wall_2x5m
 {
 	technique
 	{

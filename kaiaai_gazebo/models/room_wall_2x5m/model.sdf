@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <sdf version='1.4'>
-  <model name='room_wall_2x5'>
+  <model name='room_wall_2x5m'>
     <link name="link">
       <visual name="visual">
         <geometry>
@@ -10,11 +10,9 @@
         </geometry>
         <material>
           <script>
-            <!-- name>Gazebo/White</name -->
-            <!-- uri>file://media/materials/scripts/gazebo.material</uri -->
-            <uri>model://room_wall_2x5/material/script</uri>
-            <uri>model://room_wall_2x5/material/textures</uri>
-            <name>Custom/room_wall_2x5</name>
+            <uri>model://room_wall_2x5m/material/script</uri>
+            <uri>model://room_wall_2x5m/material/textures</uri>
+            <name>Custom/room_wall_2x5m</name>
           </script>
         </material>
       </visual>
