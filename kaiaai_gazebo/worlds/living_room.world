@@ -91,10 +91,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>14955 16000000</sim_time>
-      <real_time>1109 343679395</real_time>
-      <wall_time>1695292348 101781966</wall_time>
-      <iterations>1105289</iterations>
+      <sim_time>15243 325000000</sim_time>
+      <real_time>289 111562356</real_time>
+      <wall_time>1695293543 885607093</wall_time>
+      <iterations>288309</iterations>
       <model name='Bookshelf'>
         <pose>-2 2.4 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -106,7 +106,7 @@
         </link>
       </model>
       <model name='Chair'>
-        <pose>0.9 0.1 0 0 -0 3.1415</pose>
+        <pose>0.9 0.1 0 0 -0 3.14149</pose>
         <scale>1 1 1</scale>
         <link name='body'>
           <pose>0.9 0.1 0 0 -0 -1.57089</pose>
@@ -249,7 +249,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='room_wall_2x5'>
+      <model name='room_wall_2x5m'>
         <pose>-2.5 0 1 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
@@ -259,7 +259,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='room_wall_2x5_0'>
+      <model name='room_wall_2x5m_0'>
         <pose>2.5 0 1 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
@@ -269,21 +269,21 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='room_wall_2x5_1'>
-        <pose>0 -2.45 1 0 -0 1.5707</pose>
+      <model name='room_wall_2x5m_1'>
+        <pose>0 2.45 1 0 -0 1.5707</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0 -2.45 1 0 -0 1.5707</pose>
+          <pose>0 2.45 1 0 -0 1.5707</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='room_wall_2x5_2'>
-        <pose>0 2.45 1 0 -0 1.5707</pose>
+      <model name='room_wall_2x5m_2'>
+        <pose>0 -2.45 1 0 -0 1.5707</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>0 2.45 1 0 -0 1.5707</pose>
+          <pose>0 -2.45 1 0 -0 1.5707</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -335,7 +335,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-4.01473 -1.89344 8.65189 0 0.969795 0.364238</pose>
+        <pose>-4.2618 -1.86127 9.00255 0 0.969795 0.364238</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -1406,7 +1406,7 @@
       <static>1</static>
       <pose>-1.51717 0.939748 0 0 -0 0</pose>
     </model>
-    <model name='room_wall_2x5'>
+    <model name='room_wall_2x5m'>
       <link name='link'>
         <visual name='visual'>
           <geometry>
@@ -1416,9 +1416,9 @@
           </geometry>
           <material>
             <script>
-              <uri>model://room_wall_2x5/material/script</uri>
-              <uri>model://room_wall_2x5/material/textures</uri>
-              <name>Custom/room_wall_2x5</name>
+              <uri>model://room_wall_2x5m/material/script</uri>
+              <uri>model://room_wall_2x5m/material/textures</uri>
+              <name>Custom/room_wall_2x5m</name>
             </script>
           </material>
         </visual>
@@ -1448,9 +1448,9 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-1.6883 0.622037 0 0 -0 0</pose>
+      <pose>0.61505 -4.11317 0 0 -0 0</pose>
     </model>
-    <model name='room_wall_2x5_0'>
+    <model name='room_wall_2x5m_0'>
       <link name='link'>
         <visual name='visual'>
           <geometry>
@@ -1460,9 +1460,9 @@
           </geometry>
           <material>
             <script>
-              <uri>model://room_wall_2x5/material/script</uri>
-              <uri>model://room_wall_2x5/material/textures</uri>
-              <name>Custom/room_wall_2x5</name>
+              <uri>model://room_wall_2x5m/material/script</uri>
+              <uri>model://room_wall_2x5m/material/textures</uri>
+              <name>Custom/room_wall_2x5m</name>
             </script>
           </material>
         </visual>
@@ -1492,9 +1492,9 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-2.78604 0.374135 0 0 -0 0</pose>
+      <pose>4.26998 -3.47972 0 0 -0 0</pose>
     </model>
-    <model name='room_wall_2x5_2'>
+    <model name='room_wall_2x5m_1'>
       <link name='link'>
         <visual name='visual'>
           <geometry>
@@ -1504,9 +1504,9 @@
           </geometry>
           <material>
             <script>
-              <uri>model://room_wall_2x5/material/script</uri>
-              <uri>model://room_wall_2x5/material/textures</uri>
-              <name>Custom/room_wall_2x5</name>
+              <uri>model://room_wall_2x5m/material/script</uri>
+              <uri>model://room_wall_2x5m/material/textures</uri>
+              <name>Custom/room_wall_2x5m</name>
             </script>
           </material>
         </visual>
@@ -1536,9 +1536,9 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-0.637773 3.6908 0 0 -0 0</pose>
+      <pose>2.24648 5.26537 0 0 -0 0</pose>
     </model>
-    <model name='room_wall_2x5_1'>
+    <model name='room_wall_2x5m_2'>
       <link name='link'>
         <visual name='visual'>
           <geometry>
@@ -1548,9 +1548,9 @@
           </geometry>
           <material>
             <script>
-              <uri>model://room_wall_2x5/material/script</uri>
-              <uri>model://room_wall_2x5/material/textures</uri>
-              <name>Custom/room_wall_2x5</name>
+              <uri>model://room_wall_2x5m/material/script</uri>
+              <uri>model://room_wall_2x5m/material/textures</uri>
+              <name>Custom/room_wall_2x5m</name>
             </script>
           </material>
         </visual>
@@ -1580,7 +1580,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>0.757172 -3.3208 0 0 -0 0</pose>
+      <pose>1.86901 -4.18146 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>
