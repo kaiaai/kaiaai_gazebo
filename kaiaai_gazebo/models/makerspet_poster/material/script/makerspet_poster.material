@@ -1,0 +1,13 @@
+material Custom/makerspet
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture makerspet_logo_600x700.png
+			}
+		}
+	}
+}
