@@ -90,85 +90,16 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-    <model name='kaiaai_room_wall_0'>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.1 5 2.5</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <name>Gazebo/White</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>1.88588 0.038048 0 0 -0 0</pose>
-    </model>
-    <model name='kaiaai_room_wall_1'>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.1 5 2.5</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <name>Gazebo/White</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>0.439935 -3.40903 0 0 -0 0</pose>
-    </model>
-    <model name='kaiaai_room_wall_2'>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.1 5 2.5</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <name>Gazebo/White</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>-0.175994 3.34263 0 0 -0 0</pose>
-    </model>
     <state world_name='default'>
-      <sim_time>10372 116000000</sim_time>
-      <real_time>804 727264298</real_time>
-      <wall_time>1695245244 426242185</wall_time>
-      <iterations>799302</iterations>
+      <sim_time>13192 218000000</sim_time>
+      <real_time>480 209291832</real_time>
+      <wall_time>1695257208 814844271</wall_time>
+      <iterations>476528</iterations>
       <model name='Bookshelf'>
-        <pose>-2 2.38 0 0 -0 0</pose>
+        <pose>-2 2.4 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-2 2.38 0 0 -0 0</pose>
+          <pose>-2 2.4 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -255,10 +186,10 @@
         </link>
       </model>
       <model name='cabinet'>
-        <pose>2.2 2.16 0 0 -0 1.5707</pose>
+        <pose>2.21 2.17 0 0 -0 1.5707</pose>
         <scale>1 1 1</scale>
         <link name='cabinet_bottom_plate'>
-          <pose>2.2 2.16 0 0 -0 1.5707</pose>
+          <pose>2.21 2.17 0 0 -0 1.5707</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -269,16 +200,6 @@
         <scale>1 1 1</scale>
         <link name='link'>
           <pose>-2.495 -1.2 1 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='frc2016_ball'>
-        <pose>1 1.25 0.126438 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>1 1.25 0.126438 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -295,40 +216,10 @@
         </link>
       </model>
       <model name='kaiaai_poster'>
-        <pose>-2.4 0 1.5 0 -0 0</pose>
+        <pose>-2.45 0 1.5 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-2.4 0 1.5 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='kaiaai_room_wall_0'>
-        <pose>2.5 0 1.25 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>2.5 0 1.25 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='kaiaai_room_wall_1'>
-        <pose>0 -2.45 1.25 0 -0 1.5707</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>0 -2.45 1.25 0 -0 1.5707</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='kaiaai_room_wall_2'>
-        <pose>0 2.45 1.25 0 0 -1.5707</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>0 2.45 1.25 0 0 -1.5707</pose>
+          <pose>-2.45 0 1.5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -339,10 +230,20 @@
         <scale>1 1 1</scale>
       </model>
       <model name='makerspet_poster'>
-        <pose>-2.4 1 1.5 0 -0 0</pose>
+        <pose>-2.45 1 1.5 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-2.4 1 1.5 0 -0 0</pose>
+          <pose>-2.45 1 1.5 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='red_ball_10in'>
+        <pose>1 1.25 0.127 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1 1.25 0.127 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -358,7 +259,37 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='rug_ivory_2m'>
+      <model name='room_wall_2x5_0'>
+        <pose>2.5 0 1 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.5 0 1 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='room_wall_2x5_1'>
+        <pose>0 -2.45 1 0 -0 1.5707</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 -2.45 1 0 -0 1.5707</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='room_wall_2x5_2'>
+        <pose>0 2.45 1 0 -0 1.5707</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 2.45 1 0 -0 1.5707</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='rug_ivory_2m_0'>
         <pose>0 0.15 0 0 -0 1.5707</pose>
         <scale>1 1 1</scale>
         <link name='link'>
@@ -368,7 +299,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='tv_65in'>
+      <model name='tv_65in_emissive'>
         <pose>0 2.4 0.9 0 -0 1.5707</pose>
         <scale>1 1 1</scale>
         <link name='link'>
@@ -379,20 +310,20 @@
         </link>
       </model>
       <model name='window_curtains'>
-        <pose>2.45 1 1 0 -0 3.1415</pose>
+        <pose>2.45 1 1 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.45 1 1 0 -0 3.1415</pose>
+          <pose>2.45 1 1 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='window_curtains_clone'>
-        <pose>2.45 -1 1 0 -0 3.1415</pose>
+      <model name='window_curtains_0'>
+        <pose>2.45 -1 1 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.45 -1 1 0 -0 3.1415</pose>
+          <pose>2.45 -1 1 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -1247,7 +1178,7 @@
     </model>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-4.36436 -4.66572 9.5358 0 1.0858 0.700256</pose>
+        <pose>-1.58866 -7.38184 7.19695 -0 0.6618 1.06426</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -1276,30 +1207,6 @@
       <allow_auto_disable>1</allow_auto_disable>
       <pose>-1.79858 1.04969 0 0 -0 0</pose>
     </model>
-    <model name='tv_65in'>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.05 1.45 0.83</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/tv_65in/1/files/material/script</uri>
-              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/tv_65in/1/files/material/textures</uri>
-              <name>Custom/tv</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>-0.059327 1.50054 0 0 -0 0</pose>
-    </model>
     <model name='kaiaai_poster'>
       <link name='link'>
         <visual name='visual'>
@@ -1323,59 +1230,6 @@
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
       <pose>-2.09205 -0.074601 0 0 -0 0</pose>
-    </model>
-    <model name='frc2016_ball'>
-      <pose>0.255073 1.37439 0.127 0 -0 0</pose>
-      <link name='link'>
-        <inertial>
-          <mass>0.213</mass>
-          <inertia>
-            <ixx>0.00322667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.00322667</iyy>
-            <iyz>0</iyz>
-            <izz>0.00322667</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <visual name='visual'>
-          <geometry>
-            <sphere>
-              <radius>0.127</radius>
-            </sphere>
-          </geometry>
-        </visual>
-        <collision name='collision'>
-          <geometry>
-            <sphere>
-              <radius>0.127</radius>
-            </sphere>
-          </geometry>
-          <surface>
-            <bounce>
-              <restitution_coefficient>0.15937</restitution_coefficient>
-              <threshold>0</threshold>
-            </bounce>
-            <contact>
-              <ode>
-                <max_vel>100</max_vel>
-                <min_depth>0.001</min_depth>
-              </ode>
-            </contact>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
     </model>
     <model name='LampAndStand'>
       <static>1</static>
@@ -1438,82 +1292,10 @@
       <allow_auto_disable>1</allow_auto_disable>
       <pose>-2.1175 -0.31181 0 0 -0 0</pose>
     </model>
-    <model name='rug_ivory_2m'>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>1.6 2 0.005</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://rug_ivory_2m/material/script</uri>
-              <uri>model://rug_ivory_2m/material/textures</uri>
-              <name>Custom/rug_ivory_2m</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>-1.37816 1.09609 0 0 -0 0</pose>
-    </model>
     <model name='living_room'>
       <static>0</static>
       <allow_auto_disable>1</allow_auto_disable>
       <pose>-1.83596 1.40391 0 0 -0 0</pose>
-    </model>
-    <model name='window_curtains'>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.02 1.5676 2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://window_curtains/material/script</uri>
-              <uri>model://window_curtains/material/textures</uri>
-              <name>Custom/window_curtains</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>-1.99246 -0.311449 0 0 -0 0</pose>
-    </model>
-    <model name='window_curtains_clone'>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.02 1.5676 2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://window_curtains/material/script</uri>
-              <uri>model://window_curtains/material/textures</uri>
-              <name>Custom/window_curtains</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>2.10559 -1.25107 1 0 -0 3.1415</pose>
     </model>
     <model name='room_wall_2x5'>
       <link name='link'>
@@ -1525,8 +1307,9 @@
           </geometry>
           <material>
             <script>
-              <name>Gazebo/White</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/script</uri>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/textures</uri>
+              <name>Custom/room_wall_2x5</name>
             </script>
           </material>
         </visual>
@@ -1556,7 +1339,296 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-1.60166 0.099911 0 0 -0 0</pose>
+      <pose>-3.31522 0.586996 0 0 -0 0</pose>
+    </model>
+    <model name='room_wall_2x5_0'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.1 5 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/script</uri>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/textures</uri>
+              <name>Custom/room_wall_2x5</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>2.24326 -0.257306 0 0 -0 0</pose>
+    </model>
+    <model name='room_wall_2x5_1'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.1 5 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/script</uri>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/textures</uri>
+              <name>Custom/room_wall_2x5</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>0.299614 -2.6978 0 0 -0 0</pose>
+    </model>
+    <model name='room_wall_2x5_2'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.1 5 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/script</uri>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/room_wall_2x5m/1/files/material/textures</uri>
+              <name>Custom/room_wall_2x5</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.1 5 2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>2.8172 0.540927 0 0 -0 0</pose>
+    </model>
+    <model name='rug_ivory_2m_0'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>1.6 2 0.005</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/rug_ivory_2m/1/files/material/script</uri>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/rug_ivory_2m/1/files/material/textures</uri>
+              <name>Custom/rug_ivory_2m</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>-1.68463 0.969564 0 0 -0 0</pose>
+    </model>
+    <model name='window_curtains'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.02 1.5676 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/window_curtains/1/files/material/script</uri>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/window_curtains/1/files/material/textures</uri>
+              <name>Custom/window_curtains</name>
+            </script>
+            <emissive>0 1 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>2.35925 1.12227 0 0 -0 0</pose>
+    </model>
+    <model name='window_curtains_0'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.02 1.5676 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/window_curtains/1/files/material/script</uri>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/window_curtains/1/files/material/textures</uri>
+              <name>Custom/window_curtains</name>
+            </script>
+            <emissive>0 1 0 1</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>2.38084 0.258658 0 0 -0 0</pose>
+    </model>
+    <model name='red_ball_10in'>
+      <pose>0.83729 1.5589 0.127 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <mass>0.213</mass>
+          <inertia>
+            <ixx>0.00322667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00322667</iyy>
+            <iyz>0</iyz>
+            <izz>0.00322667</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <sphere>
+              <radius>0.127</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Red</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <sphere>
+              <radius>0.127</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <bounce>
+              <restitution_coefficient>0.15937</restitution_coefficient>
+              <threshold>0</threshold>
+            </bounce>
+            <contact>
+              <ode>
+                <max_vel>100</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='tv_65in_emissive'>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.05 1.45 0.83</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/tv_65in_emissive/4/files/material/script</uri>
+              <uri>https://fuel.ignitionrobotics.org/1.0/makerspet/models/tv_65in_emissive/4/files/material/textures</uri>
+              <name>Custom/tv_emissive</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>1.96281 1.09749 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>
