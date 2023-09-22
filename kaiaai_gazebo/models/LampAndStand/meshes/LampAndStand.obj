@@ -512,13 +512,13 @@ f 40 93 53
 f 18 43 27
 f 43 42 27
 f 10 21 57
-# usemtl ParaMeshAtf_13
+usemtl texture
 f 36/49 35/48 39/52
 f 48/78 36/49 39/52
 # usemtl 204,204,204
 f 57 48 39
 f 10 57 39
-# usemtl ParaMeshAtf_13
+usemtl texture
 f 10/10 39/52 11/11
 # 93 vertices
 # 239 texture params
