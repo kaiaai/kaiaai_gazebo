@@ -16,7 +16,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://LampAndStand/meshes/LampAndStand_Col.obj</uri>
+            <uri>model://LampAndStand/meshes/LampAndStand.obj</uri>
           </mesh>
         </geometry>
       </collision>
