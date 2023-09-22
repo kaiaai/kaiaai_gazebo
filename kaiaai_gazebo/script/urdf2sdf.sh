@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# urdf2sdf.sh /full/path/to/urdf/ robot_description
+# syntax urdf2sdf.sh /full/path/robot.urdf.xacro
+# TODO syntax urdf2sdf.sh /full/path/robot.urdf  # Skip running xacro
 [[ -z "$1" ]] && { echo "$1 does not exist" ; exit 1; }
 
 path_name=$(echo "$1" | sed -r "s/(.+)\/.+/\1/")
