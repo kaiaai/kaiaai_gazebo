@@ -11,3 +11,6 @@ Ni 1.450000
 d 1.000000
 illum 2
 map_Kd LampAndStand_Diffuse.png
+
+newmtl 204,204,204
+Kd 0.800000 0.800000 0.800000
