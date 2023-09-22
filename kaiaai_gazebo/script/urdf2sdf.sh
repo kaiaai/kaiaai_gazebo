@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# syntax urdf2sdf.sh /full/path/robot.urdf.xacro
-# TODO syntax urdf2sdf.sh /full/path/robot.urdf  # Skip running xacro
+# urdf2sdf.sh /full/path/to/urdf/ robot_description
 [[ -z "$1" ]] && { echo "$1 does not exist" ; exit 1; }
 cd $1
 
