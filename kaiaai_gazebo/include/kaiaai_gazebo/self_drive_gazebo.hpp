@@ -27,11 +27,6 @@
 #define DEG2RAD (M_PI / 180.0)
 #define RAD2DEG (180.0 / M_PI)
 
-#define CENTER 0
-#define LEFT   1
-#define RIGHT  2
-
-#define KAIAAI_GET_DIRECTION 0
 #define KAIAAI_DRIVE_FORWARD 1
 #define KAIAAI_RIGHT_TURN    2
 #define KAIAAI_LEFT_TURN     3
@@ -52,8 +47,8 @@ private:
 
   // Variables
   double robot_pose_;
-  double prev_robot_pose_;
-  double scan_data_[3];
+  int obstacle_angle_left_;
+  int obstacle_angle_right_;
 
   // ROS timer
   rclcpp::TimerBase::SharedPtr update_timer_;

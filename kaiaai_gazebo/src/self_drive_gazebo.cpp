@@ -31,17 +31,12 @@ KaiaSelfDrive::KaiaSelfDrive()
 
   this->declare_parameter("odometry.topic_name_sub", "odom");
 
-  this->declare_parameter("check.side_scan_angle", 30);
-  this->declare_parameter("check.forward_distance", 0.7);
-  this->declare_parameter("check.side_distance", 0.6);
-  this->declare_parameter("check.turn_away_angle", 30);
+  this->declare_parameter("check.angle", 30);
+  this->declare_parameter("check.distance", 0.5);
 
-  scan_data_[0] = 0.0;
-  scan_data_[1] = 0.0;
-  scan_data_[2] = 0.0;
-
+  obstacle_angle_left_ = 180;
+  obstacle_angle_right_ = 180;
   robot_pose_ = 0.0;
-  prev_robot_pose_ = 0.0;
 
   cmd_vel_pub_ = this->create_publisher<geometry_msgs::msg::Twist>(
     this->get_parameter("velocity.topic_name_pub").as_string(), 10);
@@ -80,16 +75,25 @@ void KaiaSelfDrive::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
 
 void KaiaSelfDrive::scan_callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
 {
-  int side_scan_angle = (uint16_t)this->get_parameter("check.side_scan_angle").as_int();
-  uint16_t scan_angle[3] = {0, (uint16_t)side_scan_angle, (uint16_t)(360-side_scan_angle)};
+  double check_distance = this->get_parameter("check.distance").as_double();
 
-  for (int num = 0; num < 3; num++) {
-    if (std::isinf(msg->ranges.at(scan_angle[num]))) {
-      scan_data_[num] = msg->range_max;
-    } else {
-      scan_data_[num] = msg->ranges.at(scan_angle[num]);
+  for (obstacle_angle_left_ = 0; obstacle_angle_left_ < 180; obstacle_angle_left_++) {
+    if (!std::isinf(msg->ranges.at(obstacle_angle_left_))) {
+      double distance = msg->ranges.at(obstacle_angle_left_);
+      if (distance < check_distance)
+        break;
     }
   }
+
+  for (obstacle_angle_right_ = 359; obstacle_angle_right_ >= 180; obstacle_angle_right_--) {
+    if (!std::isinf(msg->ranges.at(obstacle_angle_right_))) {
+      double distance = msg->ranges.at(obstacle_angle_right_);
+      if (distance < check_distance)
+        break;
+    }
+  }
+  obstacle_angle_right_ = 360 - obstacle_angle_right_;
+
 }
 
 void KaiaSelfDrive::update_cmd_vel(double linear, double angular)
@@ -104,59 +108,36 @@ void KaiaSelfDrive::update_cmd_vel(double linear, double angular)
 
 void KaiaSelfDrive::update_callback()
 {
-  static uint8_t kaiaai_state_num = KAIAAI_GET_DIRECTION;
-
   if (!keepRunning) {
     update_cmd_vel(0.0, 0.0);
     rclcpp::shutdown();
+    return;
   }
 
-  switch (kaiaai_state_num) {
-    case KAIAAI_GET_DIRECTION:
+  int check_angle = this->get_parameter("check.angle").as_int();
+  int gap_angle = obstacle_angle_right_ + obstacle_angle_left_;
+  uint8_t kaiaai_state = KAIAAI_RIGHT_TURN;
 
-      if (scan_data_[CENTER] > this->get_parameter("check.forward_distance").as_double()) {
-        double check_side_dist = this->get_parameter("check.side_distance").as_double();
+  if (obstacle_angle_right_ > check_angle && obstacle_angle_left_ > check_angle)
+    kaiaai_state = KAIAAI_DRIVE_FORWARD;
+  else if (obstacle_angle_right_ > check_angle && gap_angle > 2*check_angle)
+    kaiaai_state = KAIAAI_RIGHT_TURN;
+  else if (obstacle_angle_left_ > check_angle && gap_angle > 2*check_angle)
+    kaiaai_state = KAIAAI_LEFT_TURN;
+  else if (obstacle_angle_left_ > check_angle && gap_angle > 2*check_angle)
+    kaiaai_state = KAIAAI_RIGHT_TURN;
 
-        if (scan_data_[LEFT] < check_side_dist) {
-          prev_robot_pose_ = robot_pose_;
-          kaiaai_state_num = KAIAAI_RIGHT_TURN;
-        } else if (scan_data_[RIGHT] < check_side_dist) {
-          prev_robot_pose_ = robot_pose_;
-          kaiaai_state_num = KAIAAI_LEFT_TURN;
-        } else {
-          kaiaai_state_num = KAIAAI_DRIVE_FORWARD;
-        }
-      } else {
-        prev_robot_pose_ = robot_pose_;
-        kaiaai_state_num = KAIAAI_RIGHT_TURN;
-      }
-      break;
-
+  switch (kaiaai_state) {
     case KAIAAI_DRIVE_FORWARD:
       update_cmd_vel(this->get_parameter("velocity.linear").as_double(), 0.0);
-      kaiaai_state_num = KAIAAI_GET_DIRECTION;
       break;
 
     case KAIAAI_RIGHT_TURN:
-      if (fabs(prev_robot_pose_ - robot_pose_) >=
-        this->get_parameter("check.turn_away_angle").as_int() * DEG2RAD) {
-        kaiaai_state_num = KAIAAI_GET_DIRECTION;
-      } else {
-        update_cmd_vel(0.0, -1 * this->get_parameter("velocity.angular").as_double());
-      }
+      update_cmd_vel(0.0, -1 * this->get_parameter("velocity.angular").as_double());
       break;
 
     case KAIAAI_LEFT_TURN:
-      if (fabs(prev_robot_pose_ - robot_pose_) >=
-        this->get_parameter("check.turn_away_angle").as_int() * DEG2RAD) {
-        kaiaai_state_num = KAIAAI_GET_DIRECTION;
-      } else {
-        update_cmd_vel(0.0, this->get_parameter("velocity.angular").as_double());
-      }
-      break;
-
-    default:
-      kaiaai_state_num = KAIAAI_GET_DIRECTION;
+      update_cmd_vel(0.0, this->get_parameter("velocity.angular").as_double());
       break;
   }
 }
