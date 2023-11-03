@@ -23,14 +23,13 @@ from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.actions import Node
 
-def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose, world):
-    model_name = context.perform_substitution(description)
+def make_nodes(context: LaunchContext, robot_model, use_sim_time, x_pose, y_pose, world):
+    model_name = context.perform_substitution(robot_model)
     use_sim_time_str = context.perform_substitution(use_sim_time)
     x_pose_str = context.perform_substitution(x_pose)
     y_pose_str = context.perform_substitution(y_pose)
     world_str = context.perform_substitution(world)
 
-    # model_name = re.sub(r'_description$', '', model_name)
     urdf_path_name = os.path.join(
       get_package_share_path(model_name),
       'urdf',
@@ -85,7 +84,7 @@ def make_nodes(context: LaunchContext, description, use_sim_time, x_pose, y_pose
     ]
 
 def generate_launch_description():
-    default_description = os.getenv('KAIAAI_ROBOT', default='kaiaai_snoopy')
+    default_robot_model = os.getenv('KAIAAI_ROBOT', default='kaiaai_snoopy')
     pkg_gazebo_ros = get_package_share_path('gazebo_ros')
 
     return LaunchDescription([
@@ -96,8 +95,8 @@ def generate_launch_description():
             description='Use simulation (Gazebo) clock if true'
         ),
         DeclareLaunchArgument(
-            name='description',
-            default_value=default_description,
+            name='robot_model',
+            default_value=default_robot_model,
             description='Robot description package name, overrides KAIAAI_ROBOT'
         ),
         DeclareLaunchArgument(
@@ -121,7 +120,7 @@ def generate_launch_description():
             ),
         ),
         OpaqueFunction(function=make_nodes, args=[
-            LaunchConfiguration('description'),
+            LaunchConfiguration('robot_model'),
             LaunchConfiguration('use_sim_time'),
             LaunchConfiguration('x_pose'),
             LaunchConfiguration('y_pose'),

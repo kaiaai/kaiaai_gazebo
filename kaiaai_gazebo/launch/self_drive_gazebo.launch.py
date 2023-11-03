@@ -23,11 +23,11 @@ from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 
-def make_nodes(context: LaunchContext, description):
-    description_str = context.perform_substitution(description)
+def make_nodes(context: LaunchContext, robot_model):
+    robot_model_str = context.perform_substitution(robot_model)
 
     param_path_name = os.path.join(
-        get_package_share_path(description_str),
+        get_package_share_path(robot_model_str),
         'config',
         'self_drive_gazebo.yaml'
         )
@@ -44,15 +44,15 @@ def make_nodes(context: LaunchContext, description):
 
 
 def generate_launch_description():
-    default_description_name = os.getenv('KAIAAI_ROBOT', default='kaiaai_snoopy')
+    default_robot_model_name = os.getenv('KAIAAI_ROBOT', default='kaiaai_snoopy')
 
     return LaunchDescription([
         DeclareLaunchArgument(
-            name='description',
-            default_value=default_description_name,
+            name='robot_model',
+            default_value=default_robot_model_name,
             description='Robot description package name, overrides KAIAAI_ROBOT'
         ),
         OpaqueFunction(function=make_nodes, args=[
-            LaunchConfiguration('description'),
+            LaunchConfiguration('robot_model'),
         ]),
     ])
