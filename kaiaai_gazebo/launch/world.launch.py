@@ -33,7 +33,8 @@ def make_nodes(context: LaunchContext, robot_model, use_sim_time, x_pose, y_pose
     urdf_path_name = os.path.join(
       get_package_share_path(model_name),
       'urdf',
-      model_name + '.urdf.xacro')
+#      model_name + '.urdf.xacro')
+      'robot.urdf.xacro')
 
     robot_description = ParameterValue(Command(['xacro ', urdf_path_name]), value_type=str)
 
@@ -84,7 +85,7 @@ def make_nodes(context: LaunchContext, robot_model, use_sim_time, x_pose, y_pose
     ]
 
 def generate_launch_description():
-    default_robot_model = os.getenv('KAIAAI_ROBOT', default='kaiaai_snoopy')
+
     pkg_gazebo_ros = get_package_share_path('gazebo_ros')
 
     return LaunchDescription([
@@ -96,8 +97,8 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument(
             name='robot_model',
-            default_value=default_robot_model,
-            description='Robot description package name, overrides KAIAAI_ROBOT'
+            default_value='makerspet_snoopy',
+            description='Robot description package name'
         ),
         DeclareLaunchArgument(
             name='x_pose',

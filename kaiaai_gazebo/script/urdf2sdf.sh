@@ -1,18 +1,17 @@
 #!/bin/bash
 
-# urdf2sdf.sh /full/path/to/urdf/robot.urdf.xacro
+# Example
+# urdf2sdf.sh /ros_ws/src/makerspet_loki
+
 [[ -z "$1" ]] && { echo "$1 does not exist" ; exit 1; }
 
-path_name=$(echo "$1" | sed -r "s/(.+)\/.+/\1/")
-file_name_dot_urdf_dot_xacro=$(echo "$1" | sed "s/.*\///")
-file_name_dot_urdf=${file_name_dot_urdf_dot_xacro%.xacro}
-file_name_base=${file_name_dot_urdf%.urdf}
+robot_model_name=$(echo "$1" | sed "s/.*\///")
+echo "Converting $1/urdf/robot.urdf.xacro"
 
-cd $path_name
-
-xacro $1 > $file_name_dot_urdf
-gz sdf -p $file_name_dot_urdf > $file_name_base.sdf
-rm $file_name_dot_urdf
-dest=$path_name/../sdf/$file_name_base/model.sdf
-mv $file_name_base.sdf $dest
+cd $1/urdf
+xacro robot.urdf.xacro > robot.urdf
+gz sdf -p robot.urdf > robot.sdf
+rm robot.urdf
+dest=$1/sdf/$robot_model_name/model.sdf
+mv robot.sdf $dest
 echo "Wrote $dest"
