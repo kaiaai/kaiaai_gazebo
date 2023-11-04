@@ -77,22 +77,22 @@ void KaiaSelfDrive::scan_callback(const sensor_msgs::msg::LaserScan::SharedPtr m
 {
   double check_distance = this->get_parameter("check.distance").as_double();
 
-  for (obstacle_angle_left_ = 0; obstacle_angle_left_ < 180; obstacle_angle_left_++) {
-    if (!std::isinf(msg->ranges.at(obstacle_angle_left_))) {
-      double distance = msg->ranges.at(obstacle_angle_left_);
-      if (distance < check_distance)
-        break;
-    }
-  }
-
-  for (obstacle_angle_right_ = 359; obstacle_angle_right_ >= 180; obstacle_angle_right_--) {
+  for (obstacle_angle_right_ = 0; obstacle_angle_right_ < 180; obstacle_angle_right_++) {
     if (!std::isinf(msg->ranges.at(obstacle_angle_right_))) {
       double distance = msg->ranges.at(obstacle_angle_right_);
       if (distance < check_distance)
         break;
     }
   }
-  obstacle_angle_right_ = 360 - obstacle_angle_right_;
+
+  for (obstacle_angle_left_ = 359; obstacle_angle_left_ >= 180; obstacle_angle_left_--) {
+    if (!std::isinf(msg->ranges.at(obstacle_angle_left_))) {
+      double distance = msg->ranges.at(obstacle_angle_left_);
+      if (distance < check_distance)
+        break;
+    }
+  }
+  obstacle_angle_left_ = 360 - obstacle_angle_left_;
 
 }
 
