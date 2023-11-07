@@ -5,8 +5,8 @@
   <version>0.0.0</version>
   <description>Gazebo simulation package for Kaia.ai-compatible robots</description>
 
-  <maintainer email="iliao@remake.ai">Ilia O.</maintainer>
-  <author email="iliao@remake.ai">Ilia O.</author>
+  <maintainer email="iliao@kaia.ai">Ilia O.</maintainer>
+  <author email="iliao@kaia.ai">Ilia O.</author>
   <license>Apache-2.0</license>
   <url type="website">https://kaia.ai/</url>
   <url type="repository">https://github.com/kaiaai/kaiaai_simulations</url>
