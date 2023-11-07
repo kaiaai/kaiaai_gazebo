@@ -17,7 +17,6 @@ find_package(nav_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
-find_package(makerspet_loki REQUIRED)
 find_package(makerspet_snoopy REQUIRED)
 
 link_directories(
@@ -46,7 +45,7 @@ install(TARGETS ${EXEC_NAME}
   DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY launch models worlds
+install(DIRECTORY launch models worlds map
   DESTINATION share/${PROJECT_NAME}/
 )
 
