@@ -91,10 +91,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>15330 600000000</sim_time>
-      <real_time>87 421059918</real_time>
-      <wall_time>1695378947 482109186</wall_time>
-      <iterations>87275</iterations>
+      <sim_time>15519 909000000</sim_time>
+      <real_time>190 849225068</real_time>
+      <wall_time>1702357791 104717519</wall_time>
+      <iterations>189309</iterations>
       <model name='Bookshelf'>
         <pose>-2 2.4 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -239,6 +239,26 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
+      <model name='pet_gate'>
+        <pose>1.44509 -0.733036 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.44509 -0.733036 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='pet_gate_wide'>
+        <pose>-2.3 -1.67768 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-2.3 -1.67768 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
       <model name='red_ball_10in'>
         <pose>1 1.25 0.127 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -335,7 +355,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-4.2618 -1.86127 9.00255 0 0.969795 0.364238</pose>
+        <pose>0.523612 1.52962 6.94532 0 1.2778 -1.54376</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -1581,6 +1601,759 @@
         <kinematic>0</kinematic>
       </link>
       <pose>-1.11184 -1.07517 0 0 -0 0</pose>
+    </model>
+    <model name='pet_gate_wide'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='bar1_collision'>
+          <pose>0 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar1_visual'>
+          <pose>0 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bar2_collision'>
+          <pose>0.1651 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar2_visual'>
+          <pose>0.1651 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bar3_collision'>
+          <pose>0.3302 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar3_visual'>
+          <pose>0.3302 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bar4_collision'>
+          <pose>0.4953 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar4_visual'>
+          <pose>0.4953 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bar5_collision'>
+          <pose>0.6604 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar5_visual'>
+          <pose>0.6604 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bar6_collision'>
+          <pose>0.8255 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar6_visual'>
+          <pose>0.8255 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bar7_collision'>
+          <pose>0.9906 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar7_visual'>
+          <pose>0.9906 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bar8_collision'>
+          <pose>1.1557 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar8_visual'>
+          <pose>1.1557 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bar9_collision'>
+          <pose>1.3208 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar9_visual'>
+          <pose>1.3208 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bar10_collision'>
+          <pose>1.4859 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar10_visual'>
+          <pose>1.4859 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bar11_collision'>
+          <pose>1.651 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar11_visual'>
+          <pose>1.651 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='top_rail_collision'>
+          <pose>0.8255 0 0.7493 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.6764 0.0254 0.0254</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='top_rail_visual'>
+          <pose>0.8255 0 0.7493 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.6764 0.0254 0.0254</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bottom_rail_collision'>
+          <pose>0.8255 0 0.0127 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.6764 0.0254 0.0254</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bottom_rail_visual'>
+          <pose>0.8255 0 0.0127 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.6764 0.0254 0.0254</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-2.25738 -1.67768 0 0 -0 0</pose>
+    </model>
+    <model name='pet_gate'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='bar1_collision'>
+          <pose>0 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar1_visual'>
+          <pose>0 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bar2_collision'>
+          <pose>0.1651 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar2_visual'>
+          <pose>0.1651 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bar3_collision'>
+          <pose>0.3302 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar3_visual'>
+          <pose>0.3302 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bar4_collision'>
+          <pose>0.4953 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar4_visual'>
+          <pose>0.4953 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bar5_collision'>
+          <pose>0.6604 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar5_visual'>
+          <pose>0.6604 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bar6_collision'>
+          <pose>0.8255 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bar6_visual'>
+          <pose>0.8255 0 0.381 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.0254 0.0254 0.7366</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='top_rail_collision'>
+          <pose>0.41275 0 0.7493 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.8509 0.0254 0.0254</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='top_rail_visual'>
+          <pose>0.41275 0 0.7493 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.8509 0.0254 0.0254</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='bottom_rail_collision'>
+          <pose>0.41275 0 0.0127 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.8509 0.0254 0.0254</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='bottom_rail_visual'>
+          <pose>0.41275 0 0.0127 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.8509 0.0254 0.0254</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.44509 -0.733036 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>
