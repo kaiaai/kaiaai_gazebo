@@ -4,6 +4,8 @@
 
 This repo is a ROS2 simulations meta-package for [Kaia.ai](https://kaia.ai) pet robots.
 
+Questions? Please visit the [Support Forum](https://github.com/makerspet/support/discussions/)!
+
 ## Your PC setup
 - If you are using a Windows PC, install [Windows WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install)
 and [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
