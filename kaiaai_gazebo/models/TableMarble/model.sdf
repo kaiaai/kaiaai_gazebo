@@ -2,13 +2,13 @@
 <sdf version="1.5">
   <model name="table_marble">
     <static>true</static>
-    <pose>0 0 0.648 0 0 0</pose>
+    <pose>0 0 0.324 0 0 0</pose>
     <link name="link">
       <collision name="collision">
         <geometry>
           <mesh>
             <uri>model:///table_marble/meshes/table_lightmap.dae</uri>
-            <scale>0.25 0.25 0.25</scale>
+            <scale>0.05 0.1 0.125</scale>
           </mesh>
         </geometry>
       </collision>
@@ -16,7 +16,7 @@
         <geometry>
           <mesh>
             <uri>model://table_marble/meshes/table_lightmap.dae</uri>
-            <scale>0.25 0.25 0.25</scale>
+            <scale>0.05 0.1 0.125</scale>
           </mesh>
         </geometry>
         <material>
