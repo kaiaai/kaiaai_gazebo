@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright 2023 REMAKE.AI
+# Copyright 2023-2024 KAIA.AI, REMAKE.AI
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,26 +22,30 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.actions import Node
+from kaiaai import config
+
 
 def make_nodes(context: LaunchContext, robot_model, use_sim_time, x_pose, y_pose, world):
-    model_name = context.perform_substitution(robot_model)
+    robot_model_str = context.perform_substitution(robot_model)
     use_sim_time_str = context.perform_substitution(use_sim_time)
     x_pose_str = context.perform_substitution(x_pose)
     y_pose_str = context.perform_substitution(y_pose)
     world_str = context.perform_substitution(world)
 
+    if len(robot_model_str) == 0:
+      robot_model_str = config.get_var('robot.model')
+
     urdf_path_name = os.path.join(
-      get_package_share_path(model_name),
+      get_package_share_path(robot_model_str),
       'urdf',
-#      model_name + '.urdf.xacro')
       'robot.urdf.xacro')
 
     robot_description = ParameterValue(Command(['xacro ', urdf_path_name]), value_type=str)
 
     sdf_path_name = os.path.join(
-        get_package_share_path(model_name),
+        get_package_share_path(robot_model_str),
         'sdf',
-        model_name,
+        robot_model_str,
         'model.sdf'
     )
 
@@ -73,7 +77,7 @@ def make_nodes(context: LaunchContext, robot_model, use_sim_time, x_pose, y_pose
             package='gazebo_ros',
             executable='spawn_entity.py',
             arguments=[
-                '-entity', model_name,
+                '-entity', robot_model_str,
                 '-file', sdf_path_name,
                 '-timeout', '180',
                 '-x', x_pose_str,
@@ -97,7 +101,7 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument(
             name='robot_model',
-            default_value='makerspet_snoopy',
+            default_value='',
             description='Robot description package name'
         ),
         DeclareLaunchArgument(

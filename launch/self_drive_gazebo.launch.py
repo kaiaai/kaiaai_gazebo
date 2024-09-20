@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright 2023 REMAKE.AI
+# Copyright 2023-2024, KAIA.AI REMAKE.AI
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,10 +21,14 @@ from launch import LaunchDescription, LaunchContext
 from launch.actions import DeclareLaunchArgument, OpaqueFunction
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
+from kaiaai import config
 
 
 def make_nodes(context: LaunchContext, robot_model):
     robot_model_str = context.perform_substitution(robot_model)
+
+    if len(robot_model_str) == 0:
+      robot_model_str = config.get_var('robot.model')
 
     param_path_name = os.path.join(
         get_package_share_path(robot_model_str),
@@ -48,7 +52,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
             name='robot_model',
-            default_value='makerspet_snoopy',
+            default_value='',
             description='Robot description package name'
         ),
         OpaqueFunction(function=make_nodes, args=[

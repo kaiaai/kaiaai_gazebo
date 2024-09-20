@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>kaiaai_simulations</name>
+  <name>kaiaai_gazebo</name>
   <version>0.0.0</version>
-  <description>ROS2 packages for Kaia.ai software platform compatible robots simulations</description>
+  <description>Gazebo simulation package for Kaia.ai-compatible robots</description>
 
   <maintainer email="iliao@kaia.ai">Ilia O.</maintainer>
   <author email="iliao@kaia.ai">Ilia O.</author>
@@ -13,10 +13,18 @@
   <url type="bugtracker">https://github.com/kaiaai/kaiaai_simulations/issues</url>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>gazebo_ros_pkgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>tf2</depend>
 
-  <exec_depend>kaiaai_gazebo</exec_depend>
+  <exec_depend>kaiaai</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
+    <!-- gazebo_ros gazebo_media_path="${prefix}" -->
+    <gazebo_ros gazebo_model_path="${prefix}/models"/>
   </export>
 </package>
