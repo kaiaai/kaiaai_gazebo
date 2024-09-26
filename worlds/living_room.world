@@ -92,9 +92,9 @@
     </spherical_coordinates>
     <state world_name='default'>
       <sim_time>0 0</sim_time>
-      <real_time>206 914956449</real_time>
-      <wall_time>1726295986 569512929</wall_time>
-      <iterations>205303</iterations>
+      <real_time>71 842142486</real_time>
+      <wall_time>1727342836 638464102</wall_time>
+      <iterations>71368</iterations>
       <model name='Bookshelf'>
         <pose>-2 2.4 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -103,6 +103,16 @@
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Cat Figurines'>
+        <pose>2.21368 2.13863 0.019153 -0.003919 -0.005728 -1e-06</pose>
+        <scale>3 3 3</scale>
+        <link name='link_0'>
+          <pose>2.21368 2.13863 0.019153 -0.003919 -0.005728 -1e-06</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 -0 -0 -0</acceleration>
+          <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
       <model name='Chair'>
@@ -155,6 +165,17 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
+      <model name='Racoon'>
+        <static>1</static>
+        <pose>-2.00084 2.23898 0.059438 -0.005804 -0.005147 0.35</pose>
+        <scale>1.5 1.5 1.5</scale>
+        <link name='link_0'>
+          <pose>-2.00084 2.23898 0.059438 -0.005804 -0.005147 0.35</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -9.8 0 -0 0</wrench>
+        </link>
+      </model>
       <model name='Sofa'>
         <pose>0.394 -1.2 0 0 -0 1.5707</pose>
         <scale>1 1 1</scale>
@@ -163,6 +184,17 @@
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='Squirrel'>
+        <static>1</static>
+        <pose>-2.24886 2.19895 0.059926 -0.00212 -0.004134 -2.7e-05</pose>
+        <scale>1.5 1.5 1.5</scale>
+        <link name='link_0'>
+          <pose>-2.24886 2.19895 0.059926 -0.00212 -0.004134 -2.7e-05</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>1e-05 -7e-06 -0.002725 -0.09102 -0.135698 0</acceleration>
+          <wrench>1e-05 -7e-06 -0.002725 0 -0 0</wrench>
         </link>
       </model>
       <model name='TVStand'>
@@ -335,7 +367,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-7.25337 -1.18793 9.91329 0 0.841795 0.440238</pose>
+        <pose>-1.93094 -0.180516 2.18868 0 0.673795 1.48824</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -1588,6 +1620,153 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
+    </model>
+    <model name='Cat Figurines'>
+      <link name='link_0'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>/ros_ws/src/kaiaai_gazebo/models/cat_figurines/meshes/model.obj</uri>
+              <scale>3 3 3</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision_0'>
+          <geometry>
+            <mesh>
+              <uri>/ros_ws/src/kaiaai_gazebo/models/cat_figurines/meshes/model.obj</uri>
+              <scale>3 3 3</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>2.21367 2.13863 0 0 -0 0</pose>
+    </model>
+    <model name='Squirrel'>
+      <link name='link_0'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>/ros_ws/src/kaiaai_gazebo/models/squirrel/meshes/model.obj</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision_0'>
+          <geometry>
+            <mesh>
+              <uri>/ros_ws/src/kaiaai_gazebo/models/squirrel/meshes/model.obj</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-2.24889 2.19887 0 0 -0 0</pose>
+    </model>
+    <model name='Racoon'>
+      <link name='link_0'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>/ros_ws/src/kaiaai_gazebo/models/racoon/meshes/model.obj</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision_0'>
+          <geometry>
+            <mesh>
+              <uri>/ros_ws/src/kaiaai_gazebo/models/racoon/meshes/model.obj</uri>
+              <scale>1.5 1.5 1.5</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-2.00054 2.23883 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>
