@@ -533,7 +533,7 @@
       <pose>-0.476824 1.57753 0 0 -0 0</pose>
     </model>
     <model name='Bookshelf'>
-      <static>1</static>
+      <static>0</static>
       <link name='link'>
         <inertial>
           <mass>1</mass>
@@ -832,7 +832,7 @@
       <pose>-1.68529 1.91085 0 0 -0 0</pose>
     </model>
     <model name='cabinet'>
-      <static>1</static>
+      <static>0</static>
       <link name='cabinet_bottom_plate'>
         <inertial>
           <pose>0 0 -1 0 -0 0</pose>
@@ -1063,6 +1063,7 @@
       <pose>1.79402 1.75201 0 0 -0 0</pose>
     </model>
     <model name='MiniSofa'>
+      <static>1</static>
       <link name='body'>
         <pose>0 0 0 0 0 -1.5708</pose>
         <visual name='visual'>
@@ -1098,7 +1099,6 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <static>1</static>
       <pose>-1.47062 0.999637 0 0 -0 0</pose>
     </model>
     <model name='Sofa'>
