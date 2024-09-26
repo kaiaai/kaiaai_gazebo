@@ -92,9 +92,9 @@
     </spherical_coordinates>
     <state world_name='default'>
       <sim_time>0 0</sim_time>
-      <real_time>71 842142486</real_time>
-      <wall_time>1727342836 638464102</wall_time>
-      <iterations>71368</iterations>
+      <real_time>98 318817853</real_time>
+      <wall_time>1727344705 953057289</wall_time>
+      <iterations>97809</iterations>
       <model name='Bookshelf'>
         <pose>-2 2.4 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -106,12 +106,12 @@
         </link>
       </model>
       <model name='Cat Figurines'>
-        <pose>2.21368 2.13863 0.019153 -0.003919 -0.005728 -1e-06</pose>
+        <pose>2.21368 2.13863 0.019163 -0.003911 -0.005725 -1e-06</pose>
         <scale>3 3 3</scale>
         <link name='link_0'>
-          <pose>2.21368 2.13863 0.019153 -0.003919 -0.005728 -1e-06</pose>
+          <pose>2.21368 2.13863 0.019163 -0.003911 -0.005725 -1e-06</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 -0 -0 -0</acceleration>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
           <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
@@ -166,11 +166,10 @@
         </link>
       </model>
       <model name='Racoon'>
-        <static>1</static>
-        <pose>-2.00084 2.23898 0.059438 -0.005804 -0.005147 0.35</pose>
+        <pose>-1.87443 2.2 0.059448 -0.005804 -0.005152 1.2</pose>
         <scale>1.5 1.5 1.5</scale>
         <link name='link_0'>
-          <pose>-2.00084 2.23898 0.059438 -0.005804 -0.005147 0.35</pose>
+          <pose>-1.87443 2.2 0.059448 -0.005804 -0.005152 1.2</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 -9.8 0 -0 0</acceleration>
           <wrench>0 0 -9.8 0 -0 0</wrench>
@@ -187,14 +186,13 @@
         </link>
       </model>
       <model name='Squirrel'>
-        <static>1</static>
-        <pose>-2.24886 2.19895 0.059926 -0.00212 -0.004134 -2.7e-05</pose>
+        <pose>-2.24886 2.15 0.05988 -0.002123 -0.004133 -2.8e-05</pose>
         <scale>1.5 1.5 1.5</scale>
         <link name='link_0'>
-          <pose>-2.24886 2.19895 0.059926 -0.00212 -0.004134 -2.7e-05</pose>
+          <pose>-2.24886 2.15 0.05988 -0.002123 -0.004133 -2.8e-05</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>1e-05 -7e-06 -0.002725 -0.09102 -0.135698 0</acceleration>
-          <wrench>1e-05 -7e-06 -0.002725 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
       <model name='TVStand'>
@@ -367,7 +365,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-1.93094 -0.180516 2.18868 0 0.673795 1.48824</pose>
+        <pose>-1.65069 -0.015879 2.02377 0 0.673795 1.48824</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -1766,7 +1764,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>-2.00054 2.23883 0 0 -0 0</pose>
+      <pose>-1.87179 2.26276 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>
