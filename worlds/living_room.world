@@ -319,7 +319,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='table_marble'>
+      <model name='TableMarble'>
         <pose>0 0.1 0.324 0 -0 1.5708</pose>
         <scale>1 1 1</scale>
         <link name='link'>
@@ -1573,14 +1573,14 @@
       </link>
       <pose>-1.11184 -1.07517 0 0 -0 0</pose>
     </model>
-    <model name='table_marble'>
+    <model name='TableMarble'>
       <static>1</static>
       <pose>-0.006834 0.140727 0.324 0 -0 0</pose>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>model:///table_marble/meshes/table_lightmap.dae</uri>
+              <uri>model://TableMarble/meshes/table_lightmap.dae</uri>
               <scale>0.05 0.1 0.125</scale>
             </mesh>
           </geometry>
@@ -1601,14 +1601,14 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://table_marble/meshes/table_lightmap.dae</uri>
+              <uri>model://TableMarble/meshes/table_lightmap.dae</uri>
               <scale>0.05 0.1 0.125</scale>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://table_marble/materials/scripts</uri>
-              <uri>model://table_marble/materials/textures</uri>
+              <uri>model://TableMarble/materials/scripts</uri>
+              <uri>model://TableMarble/materials/textures</uri>
               <name>Table/Marble_Lightmap</name>
             </script>
             <lighting>0</lighting>
@@ -1624,7 +1624,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>/ros_ws/src/kaiaai_gazebo/models/cat_figurines/meshes/model.obj</uri>
+              <uri>model://cat_figurines/meshes/model.obj</uri>
               <scale>3 3 3</scale>
             </mesh>
           </geometry>
@@ -1632,7 +1632,7 @@
         <collision name='collision_0'>
           <geometry>
             <mesh>
-              <uri>/ros_ws/src/kaiaai_gazebo/models/cat_figurines/meshes/model.obj</uri>
+              <uri>model://cat_figurines/meshes/model.obj</uri>
               <scale>3 3 3</scale>
             </mesh>
           </geometry>
@@ -1673,7 +1673,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>/ros_ws/src/kaiaai_gazebo/models/squirrel/meshes/model.obj</uri>
+              <uri>model://squirrel/meshes/model.obj</uri>
               <scale>1.5 1.5 1.5</scale>
             </mesh>
           </geometry>
@@ -1681,7 +1681,7 @@
         <collision name='collision_0'>
           <geometry>
             <mesh>
-              <uri>/ros_ws/src/kaiaai_gazebo/models/squirrel/meshes/model.obj</uri>
+              <uri>model://squirrel/meshes/model.obj</uri>
               <scale>1.5 1.5 1.5</scale>
             </mesh>
           </geometry>
@@ -1722,7 +1722,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>/ros_ws/src/kaiaai_gazebo/models/racoon/meshes/model.obj</uri>
+              <uri>model://racoon/meshes/model.obj</uri>
               <scale>1.5 1.5 1.5</scale>
             </mesh>
           </geometry>
@@ -1730,7 +1730,7 @@
         <collision name='collision_0'>
           <geometry>
             <mesh>
-              <uri>/ros_ws/src/kaiaai_gazebo/models/racoon/meshes/model.obj</uri>
+              <uri>model://racoon/meshes/model.obj</uri>
               <scale>1.5 1.5 1.5</scale>
             </mesh>
           </geometry>
