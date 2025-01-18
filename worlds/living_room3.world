@@ -215,10 +215,6 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='living_room'>
-        <pose>-1.83596 1.40391 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-      </model>
       <model name='makerspet_poster'>
         <pose>-2.45 1 1.5 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -340,11 +336,6 @@
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-    <model name='living_room'>
-      <static>0</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>-1.83596 1.40391 0 0 -0 0</pose>
-    </model>
     <model name='FemaleVisitorSit'>
       <static>1</static>
       <link name='body'>
