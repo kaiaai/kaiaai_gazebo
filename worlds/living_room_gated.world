@@ -370,7 +370,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>model://FemaleVisitorSit/meshes/FemaleVisitorSit_Col.obj</uri>
+              <uri>model://FemaleVisitorSit/meshes/FemaleVisitorSit.obj</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -407,7 +407,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>model://MaleVisitorSit/meshes/MaleVisitorSit_Col.obj</uri>
+              <uri>model://MaleVisitorSit/meshes/MaleVisitorSit.obj</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
